@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+/* .trailerwrapper {
+  transform: rotateY(180deg);
+}
+
+.videoContainer {
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+} */
+/* video::-webkit-media-controls-current-time-display {
+  display: none;
+}
+video::-webkit-media-controls-play-button {
+  display: none;
+} */
+.blog {
+  grid-column: col1-start / col2-start;
+  grid-row: row1-start / row3-start;
+}
+.mail {
+  grid-column: col5-start;
+  grid-row: row1-start / row2-start;
+}
+.meet {
+  grid-column: col5-start;
+  grid-row: row3-start / row4-start;
+}
+.comic {
+  grid-column: col5-start;
+  grid-row: row5-start;
+}
+.blogcomic {
+  grid-column: col4-start / col5-end;
+  grid-row: row5-start;
+}
+.playbutton {
+  grid-column: col3-start / col4-start;
+  grid-row: row5-start;
+}
+.blogplaybutton {
+  grid-column: col3-start / col4-start;
+  grid-row: row5-start;
+  background-color: #000;
+}
+.instagram {
+  grid-column: col1-start / col2-start;
+  grid-row: row5-start;
+}
+.trailervideo {
+  grid-column: col3-start / col3-start;
+  grid-row: row3-start / row4-start;
+}
+.line1 {
+  grid-column: col2-start / col3-start;
+  grid-row: row2-start / row3-start;
+}
+.three {
+  background: linear-gradient(
+    to top right,
+    #fff calc(100% - 1px),
+    black,
+    #fff calc(100% + 1px)
+  );
+}
+.line2 {
+  grid-column: col4-start / col5-start;
+  grid-row: row2-start / row3-start;
+}
+.line3 {
+  grid-column: col4-start / col5-start;
+  grid-row: row3-start / row4-start;
+}
+.line4 {
+  grid-column: col4-start / col5-start;
+  grid-row: row4-start / row5-start;
+}
+.line5 {
+  grid-column: col3-start / col4-start;
+  grid-row: row4-start / row5-start;
+}
+.line6 {
+  grid-column: col2-start / col3-start;
+  grid-row: row4-start / row5-start;
+
+  /* background-color: blue; */
+}
+.diagonal.leftToright {
+  width: 110%;
+  background: linear-gradient(
+    to top left,
+    transparent calc(50% - 1px),
+    #000,
+    transparent calc(50% + 1px)
+  );
+}
+.diagonal.rightToleft {
+  width: 100%;
+  background: linear-gradient(
+    to top right,
+    transparent calc(50% - 1px),
+    #000,
+    transparent calc(50% + 1px)
+  );
+}
+.mobileVideoTrailer {
+  grid-column: col1-start / col5-end;
+  grid-row: row1-start / row4-start;
+  background-color: blue;
+}
+.thread1 {
+  grid-column: col1-start / col5-end;
+  grid-row: row4-start / row5-start;
+  /* background-color: green; */
+}
+.comp {
+  grid-column: col2-start / col5-start;
+  grid-row: row5-start / row6-start;
+  background-color: yellow;
+}
+.thread2 {
+  grid-column: col1-start / col2-start;
+  grid-row: row5-start / row6-start;
+  /* background-color: orange; */
+}
+.thread4 {
+  grid-column: col3-start / col4-start;
+  grid-row: row6-start / row7-start;
+  /* background-color: blue; */
+}
+.comp2 {
+  grid-column: col1-start / col3-start;
+  grid-row: row6-start / row7-start;
+  background-color: aqua;
+}
+.comp3 {
+  grid-column: col4-start / col5-end;
+  grid-row: row6-start / row7-start;
+  background-color: aqua;
+}
+.comp4 {
+  grid-column: col2-start / col5-start;
+  grid-row: row7-start / row8-start;
+  background-color: red;
+}
+.thread5 {
+  grid-column: col1-start / col2-start;
+  grid-row: row7-start / row8-start;
+  /* background-color: blue; */
+}
+.thread6 {
+  grid-column: col5-start / col5-end;
+  grid-row: row7-start / row8-start;
+  /* background-color: blue; */
+}
+.comp5 {
+  grid-column: col1-start / col3-start;
+  grid-row: row8-start / row8-end;
+  background-color: lemonchiffon;
+}
+.comp6 {
+  grid-column: col4-start / col5-end;
+  grid-row: row8-start / row8-end;
+  background-color: lemonchiffon;
+}
+
+@media screen and (orientation: landscape) {
+  .lock-orientation {
+    height: 900px;
+    transform: "rotate(90deg)";
+  }
+}
