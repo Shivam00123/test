@@ -94,7 +94,7 @@ const GridLayout = () => {
           <div className="blog cursor-pointer z-50 relative">
             <div
               onClick={() => switchComponentTo("blog")}
-              className="w-full h-full bg-[antiquewhite] absolute top-10 -right-1/4 rotate-12"
+              className="w-full h-full bg-[antiquewhite] absolute top-3 left-3 rotate-3"
             ></div>
           </div>
           <div className="line1 diagonal rightToleft relative overflow-hidden"></div>
@@ -117,7 +117,7 @@ const GridLayout = () => {
           <div className="comic z-50 relative">
             <div
               onClick={() => switchComponentTo("comic")}
-              className="w-2/3 h-full bg-[green] absolute -top-10 right-[60%]  -rotate-45 cursor-pointer"
+              className="w-2/3 h-full bg-[green] absolute -top-5 left-[10%]  -rotate-6 cursor-pointer"
             ></div>
           </div>
           <div className="line4 diagonal rightToleft relative overflow-hidden"></div>

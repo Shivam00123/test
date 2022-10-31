@@ -32,7 +32,7 @@ video::-webkit-media-controls-play-button {
 } */
 .blog {
   grid-column: col1-start / col2-start;
-  grid-row: row1-start / row3-start;
+  grid-row: row1-start / row4-start;
 }
 .mail {
   grid-column: col5-start;
@@ -43,7 +43,7 @@ video::-webkit-media-controls-play-button {
   grid-row: row3-start / row4-start;
 }
 .comic {
-  grid-column: col5-start;
+  grid-column: col4-start / col5-end;
   grid-row: row5-start;
 }
 .blogcomic {
@@ -122,21 +122,27 @@ video::-webkit-media-controls-play-button {
 .mobileVideoTrailer {
   grid-column: col1-start / col5-end;
   grid-row: row1-start / row4-start;
-  background-color: blue;
+  /* background-color: blue; */
 }
 .thread1 {
   grid-column: col1-start / col5-end;
-  grid-row: row4-start / row5-start;
+  grid-row: row4-start / row11-end;
+
   /* background-color: green; */
 }
 .comp {
   grid-column: col2-start / col5-start;
   grid-row: row5-start / row6-start;
-  background-color: yellow;
+  z-index: 99;
 }
 .thread2 {
-  grid-column: col1-start / col2-start;
-  grid-row: row5-start / row6-start;
+  grid-column: col4-start / col5-end;
+  grid-row: row8-start / row9-start;
+  /* background-color: orange; */
+}
+.thread3 {
+  grid-column: col1-start / col5-end;
+  grid-row: row9-start / row11-start;
   /* background-color: orange; */
 }
 .thread4 {
@@ -146,38 +152,27 @@ video::-webkit-media-controls-play-button {
 }
 .comp2 {
   grid-column: col1-start / col3-start;
-  grid-row: row6-start / row7-start;
-  background-color: aqua;
+  grid-row: row7-start / row8-start;
+  z-index: 99;
 }
 .comp3 {
   grid-column: col4-start / col5-end;
-  grid-row: row6-start / row7-start;
-  background-color: aqua;
+  grid-row: row7-start / row8-start;
+  z-index: 99;
 }
 .comp4 {
-  grid-column: col2-start / col5-start;
-  grid-row: row7-start / row8-start;
-  background-color: red;
+  grid-column: col3-start / col5-start;
+  grid-row: row9-start / row10-start;
+  z-index: 99;
 }
-.thread5 {
-  grid-column: col1-start / col2-start;
-  grid-row: row7-start / row8-start;
-  /* background-color: blue; */
-}
-.thread6 {
-  grid-column: col5-start / col5-end;
-  grid-row: row7-start / row8-start;
-  /* background-color: blue; */
-}
+
 .comp5 {
   grid-column: col1-start / col3-start;
-  grid-row: row8-start / row8-end;
-  background-color: lemonchiffon;
+  grid-row: row11-start / row11-end;
 }
 .comp6 {
-  grid-column: col4-start / col5-end;
-  grid-row: row8-start / row8-end;
-  background-color: lemonchiffon;
+  grid-column: col5-start / col5-end;
+  grid-row: row11-start / row11-end;
 }
 
 @media screen and (orientation: landscape) {

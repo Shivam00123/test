@@ -13,7 +13,7 @@ import React from "react";
 const Home = () => {
   const trailerState = useHookstate(useTrailerState());
   return (
-    <div className="w-screen min-w-[1140px] h-screen min-h-[600px] bg-[pink] relative overflow-hidden flex items-center justify-center">
+    <div className="w-screen min-w-[1140px] h-screen min-h-[600px] bg-[#ef97a6] relative overflow-hidden flex items-center justify-center">
       {/* <div className="absolute top-0 h-1/2 w-1 bg-[gray] left-1/2"></div> */}
       {/* <TrailerComp /> */}
       {/* <div className="absolute top-0 left-1/2 h-4/5 bg-[gray] w-1 skew-y-12"></div> */}
