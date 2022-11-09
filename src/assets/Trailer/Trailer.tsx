@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback, memo } from "react";
 import video from "@/public/videos/dummy.mp4";
 import playbutton from "@/public/Images/videocontrols/play.png";
 import { useHookstate } from "@hookstate/core";
@@ -9,6 +9,7 @@ interface Props {
 }
 
 const Trailer: React.FC<Props> = ({ pauseVideo }) => {
+  console.count("trailer");
   const [videoState, setVideoState] = useState<string>("paused");
   const videoRef = useRef<any>();
   const dispayingCompState = useHookstate(useDisplayingComponent());
@@ -32,7 +33,7 @@ const Trailer: React.FC<Props> = ({ pauseVideo }) => {
   };
 
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative border border-black rounded-md">
       <video
         ref={videoRef}
         onPlay={() => {
@@ -61,4 +62,4 @@ const Trailer: React.FC<Props> = ({ pauseVideo }) => {
   );
 };
 
-export default Trailer;
+export default memo(Trailer);

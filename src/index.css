@@ -37,6 +37,7 @@ video::-webkit-media-controls-play-button {
 .mail {
   grid-column: col5-start;
   grid-row: row1-start / row2-start;
+  /* background-color: red; */
 }
 .meet {
   grid-column: col5-start;
@@ -70,6 +71,9 @@ video::-webkit-media-controls-play-button {
 .line1 {
   grid-column: col2-start / col3-start;
   grid-row: row2-start / row3-start;
+  transform: rotate(25deg);
+  top: 100%;
+  transform-origin: right;
 }
 .three {
   background: linear-gradient(
@@ -82,22 +86,58 @@ video::-webkit-media-controls-play-button {
 .line2 {
   grid-column: col4-start / col5-start;
   grid-row: row2-start / row3-start;
+  transform: rotate(-25deg);
+  top: 100%;
+  transform-origin: left;
+  /* background-color:; */
 }
 .line3 {
   grid-column: col4-start / col5-start;
   grid-row: row3-start / row4-start;
+  transform: rotate(-10deg);
+  top: 50%;
+  transform-origin: left;
 }
+.meetToComicThread {
+  grid-column: col5-start / col6-start;
+  grid-row: row4-start / row5-start;
+}
+.meetToComicThreadRope {
+  bottom: 10%;
+  left: 10%;
+  transform: rotate(-60deg);
+  /* top: 50%; */
+  transform-origin: left;
+}
+
+.comicToButtonThread {
+  grid-column: col3-start / col4-start;
+  grid-row: row5-start / row6-start;
+  /* background-color: red; */
+}
+
 .line4 {
   grid-column: col4-start / col5-start;
   grid-row: row4-start / row5-start;
+  transform: rotate(30deg);
+  top: 0%;
+
+  transform-origin: left;
 }
 .line5 {
   grid-column: col3-start / col4-start;
   grid-row: row4-start / row5-start;
+  transform: rotate(90deg);
+  left: 50%;
+  top: 0%;
+  transform-origin: left;
 }
 .line6 {
   grid-column: col2-start / col3-start;
   grid-row: row4-start / row5-start;
+  transform: rotate(-25deg);
+  top: -2%;
+  transform-origin: right;
 
   /* background-color: blue; */
 }

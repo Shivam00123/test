@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import horizontalRope from "@/public/Images/ropehorizontal.png";
 import { objectType } from "@/Interface/object";
 
 const GridLayout = () => {
@@ -46,25 +47,53 @@ const GridLayout = () => {
       <div className="blog z-50 relative">
         <div className="w-full h-full bg-[antiquewhite] absolute top-10 -right-1/4 rotate-12"></div>
       </div>
-      <div className="line1 diagonal rightToleft relative overflow-hidden"></div>
-      <div className="mail relative z-50">
-        <div className="w-1/2 h-full bg-[yellow] absolute top-16 -left-0 -rotate-12 cursor-pointer"></div>
+      <div className="line1 h-[5px] w-full relative overflow-hidden">
+        <img
+          src={horizontalRope}
+          alt="rope"
+          className="w-full h-full object-cover"
+        />
       </div>
-      <div className="line2 diagonal leftToright relative overflow-hidden"></div>
+      <div className="mail relative z-50">
+        <div className="w-1/2 h-full bg-[yellow] absolute top-16 -left-10 -rotate-12 cursor-pointer"></div>
+      </div>
+      <div className="line2 h-[5px] w-full  relative overflow-hidden">
+        <img
+          src={horizontalRope}
+          alt="rope"
+          className="w-full h-full object-cover"
+        />
+      </div>
       <div className="meet relative z-50">
         <div className="w-full h-full bg-[white] absolute top-0 -left-5 rotate-6 cursor-pointer"></div>
       </div>
-      <div className="line3  relative overflow-hidden">
-        <div className="absolute top-[30%] right-0 h-[1px] w-full bg-[black] -skew-y-[12deg] "></div>
+      <div className="line3 h-[5px] w-full  relative overflow-hidden">
+        <img
+          src={horizontalRope}
+          alt="rope"
+          className="w-full h-full object-cover"
+        />
       </div>
       <div className="blogcomic relative z-50">
         <div className="w-2/3 h-full bg-[green] absolute -top-6 right-[20%]  -rotate-6 cursor-pointer"></div>
       </div>
-      <div className="line4 diagonal rightToleft relative overflow-hidden"></div>
+      <div className="line4 h-[5px] w-full relative overflow-hidden">
+        <img
+          src={horizontalRope}
+          alt="rope"
+          className="w-full h-full object-cover"
+        />
+      </div>
       <div className="instagram relative  z-50">
         <div className="w-full h-full bg-[red] absolute -top-5 -right-1/4 -rotate-12  cursor-pointer "></div>
       </div>
-      <div className="line6 diagonal leftToright relative overflow-hidden"></div>
+      <div className="line6 h-[5px] w-full  relative overflow-hidden">
+        <img
+          src={horizontalRope}
+          alt="rope"
+          className="w-full h-full object-cover"
+        />
+      </div>
     </motion.div>
   );
 };

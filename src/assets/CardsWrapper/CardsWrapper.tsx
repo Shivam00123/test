@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useDisplayingComponent } from "@/globalStates/states";
 import { useHookstate } from "@hookstate/core";
 import React from "react";
@@ -18,4 +19,4 @@ const CardsWrapper = () => {
   );
 };
 
-export default CardsWrapper;
+export default memo(CardsWrapper);
