@@ -62,7 +62,7 @@ video::-webkit-media-controls-play-button {
 }
 .instagram {
   grid-column: col1-start / col2-start;
-  grid-row: row5-start;
+  grid-row: row4-start / row5-end;
 }
 .trailervideo {
   grid-column: col3-start / col3-start;
@@ -173,7 +173,6 @@ video::-webkit-media-controls-play-button {
 .comp {
   grid-column: col2-start / col5-start;
   grid-row: row5-start / row6-start;
-  z-index: 99;
 }
 .thread2 {
   grid-column: col4-start / col5-end;
@@ -193,17 +192,14 @@ video::-webkit-media-controls-play-button {
 .comp2 {
   grid-column: col1-start / col3-start;
   grid-row: row7-start / row8-start;
-  z-index: 99;
 }
 .comp3 {
   grid-column: col4-start / col5-end;
   grid-row: row7-start / row8-start;
-  z-index: 99;
 }
 .comp4 {
   grid-column: col3-start / col5-start;
   grid-row: row9-start / row10-start;
-  z-index: 99;
 }
 
 .comp5 {

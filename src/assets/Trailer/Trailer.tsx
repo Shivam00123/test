@@ -3,6 +3,8 @@ import video from "@/public/videos/dummy.mp4";
 import playbutton from "@/public/Images/videocontrols/play.png";
 import { useHookstate } from "@hookstate/core";
 import { useDisplayingComponent } from "@/globalStates/states";
+import VideoHolder from "@/public/Images/boardElements/VideoHolder.png";
+import VideoHolderBG from "@/public/Images/boardElements/VideoHolderBG.png";
 
 interface Props {
   pauseVideo?: boolean;
@@ -33,31 +35,43 @@ const Trailer: React.FC<Props> = ({ pauseVideo }) => {
   };
 
   return (
-    <div className="w-full h-full relative border border-black rounded-md">
-      <video
-        ref={videoRef}
-        onPlay={() => {
-          changeVideoState("play");
-        }}
-        onPause={() => changeVideoState("paused")}
-        controls={videoState === "play"}
-        className="w-full h-full object-cover"
-        src={video}
-      ></video>
-      {videoState != "play" && (
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 cursor-pointer"
-          onClick={() => {
+    <div className="w-full h-full relative rounded-md">
+      <div className="absolute top-0 w-full h-full">
+        <img
+          src={VideoHolder}
+          alt="border"
+          className="w-full h-full object-contain absolute top-0"
+        />
+        <img
+          src={VideoHolderBG}
+          alt="border"
+          className="w-[120%] h-[120%] object-contain absolute -top-[10%]"
+        />
+        <video
+          ref={videoRef}
+          onPlay={() => {
             changeVideoState("play");
           }}
-        >
-          <img
-            src={playbutton}
-            alt="play_button"
-            className="w-full h-full object-contain"
-          />
-        </div>
-      )}
+          onPause={() => changeVideoState("paused")}
+          controls={videoState === "play"}
+          className="w-[95%] h-[110%] object-cover absolute -top-[5%] left-1/2 -translate-x-1/2"
+          src={video}
+        ></video>
+        {videoState != "play" && (
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 cursor-pointer"
+            onClick={() => {
+              changeVideoState("play");
+            }}
+          >
+            <img
+              src={playbutton}
+              alt="play_button"
+              className="w-full h-full object-contain"
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

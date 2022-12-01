@@ -44,7 +44,7 @@ const GridLayout = () => {
       className="w-full h-full grid  place-content-center"
     >
       <motion.div className="trailervideo bg-[red] relative"></motion.div>{" "}
-      <div className="blog z-50 relative">
+      <div className="blog relative">
         <div className="w-full h-full bg-[antiquewhite] absolute top-10 -right-1/4 rotate-12"></div>
       </div>
       <div className="line1 h-[5px] w-full relative overflow-hidden">
@@ -54,7 +54,7 @@ const GridLayout = () => {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="mail relative z-50">
+      <div className="mail relative">
         <div className="w-1/2 h-full bg-[yellow] absolute top-16 -left-10 -rotate-12 cursor-pointer"></div>
       </div>
       <div className="line2 h-[5px] w-full  relative overflow-hidden">
@@ -64,7 +64,7 @@ const GridLayout = () => {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="meet relative z-50">
+      <div className="meet relative">
         <div className="w-full h-full bg-[white] absolute top-0 -left-5 rotate-6 cursor-pointer"></div>
       </div>
       <div className="line3 h-[5px] w-full  relative overflow-hidden">
@@ -74,7 +74,7 @@ const GridLayout = () => {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="blogcomic relative z-50">
+      <div className="blogcomic relative ">
         <div className="w-2/3 h-full bg-[green] absolute -top-6 right-[20%]  -rotate-6 cursor-pointer"></div>
       </div>
       <div className="line4 h-[5px] w-full relative overflow-hidden">
@@ -84,7 +84,7 @@ const GridLayout = () => {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="instagram relative  z-50">
+      <div className="instagram relative ">
         <div className="w-full h-full bg-[red] absolute -top-5 -right-1/4 -rotate-12  cursor-pointer "></div>
       </div>
       <div className="line6 h-[5px] w-full  relative overflow-hidden">
