@@ -7,8 +7,8 @@ import React from "react";
 const Home = () => {
   return (
     <div className="w-screen min-w-[1140px] h-screen min-h-[600px] bg-[#ef97a6] relative overflow-hidden flex items-center justify-center">
-      {/* <GridLayout /> */}
-      <MeetTheCast />
+      <GridLayout />
+      {/* <MeetTheCast /> */}
     </div>
   );
 };

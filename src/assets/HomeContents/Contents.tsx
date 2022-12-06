@@ -15,7 +15,7 @@ const Contents: React.FC<functionType> = ({ func }) => {
   return (
     <>
       {" "}
-      <div className="blog cursor-pointer relative">
+      <div className="blog cursor-pointer relative ">
         {/* <Pin props="top-[30.9%] -right-[10%]" /> */}
         {/* <di
           onClick={() => func("blog")}
@@ -25,14 +25,13 @@ const Contents: React.FC<functionType> = ({ func }) => {
           src={blog}
           alt="blog"
           onClick={() => func("blog")}
-          className="w-full h-full object-contain absolute -right-[20%] -top-[10%] z-20"
+          className="w-full h-full object-contain absolute -right-[20%] -top-[10%] z-20 cursor-pointer"
         />
 
         <img
           src={BlogImage}
           alt="blog"
-          onClick={() => func("blog")}
-          className="w-1/2 h-1/2 object-contain absolute right-[6%] top-[22%] z-20"
+          className="w-1/2 h-1/2 object-contain absolute right-[6%] top-[22%] z-20 pointer-events-none"
         />
       </div>
       <div className="line1 h-[5px] w-full relative ">
@@ -70,12 +69,13 @@ const Contents: React.FC<functionType> = ({ func }) => {
         <img
           src={meetthecast}
           alt="meetthecast"
-          className="w-[120%] h-[120%] object-contain absolute top-0 -left-[10%]"
+          onClick={() => func("meet")}
+          className="w-[120%] h-[120%] object-contain absolute top-0 -left-[10%] cursor-pointer"
         />
         <img
           src={MeetTheCastImage}
           alt="meetthecast"
-          className="w-[78%] h-[78%] object-contain absolute top-[12%] -left-[8%]"
+          className="w-[78%] h-[78%] object-contain absolute top-[12%] -left-[8%] pointer-events-none"
         />
       </div>
       <div className="line3 h-[5px] w-full  relative overflow-hidden">
