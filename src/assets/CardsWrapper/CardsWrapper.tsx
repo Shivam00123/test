@@ -10,7 +10,7 @@ import Meet from "../Cards/Meet";
 const CardsWrapper = () => {
   const displayingComponentState = useHookstate(useDisplayingComponent());
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative bg-transparent">
       {displayingComponentState?.value == "blog" && <Blog />}
       {displayingComponentState?.value == "mail" && <Mail />}
       {displayingComponentState?.value == "meet" && <Meet />}

@@ -15,7 +15,7 @@ const Contents: React.FC<functionType> = ({ func }) => {
   return (
     <>
       {" "}
-      <div className="blog cursor-pointer relative ">
+      <div className="blog cursor-pointer relative bg-transparent">
         {/* <Pin props="top-[30.9%] -right-[10%]" /> */}
         {/* <di
           onClick={() => func("blog")}
@@ -61,7 +61,7 @@ const Contents: React.FC<functionType> = ({ func }) => {
       <div className="line2 h-[5px] w-full relative z-50">
         <Pin props="-top-[10%] -right-[1%]" />
       </div>
-      <div className="meet  relative z-20">
+      <div className="meet relative z-20">
         {/* <div
           onClick={() => func("meet")}
           className="w-full h-full bg-[white] absolute top-[10%] -left-[10%] rotate-6 cursor-pointer"

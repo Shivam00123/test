@@ -35,18 +35,20 @@ const Trailer: React.FC<Props> = ({ pauseVideo }) => {
   };
 
   return (
-    <div className="w-full h-full relative rounded-md">
-      <div className="absolute top-0 w-full h-full">
-        <img
-          src={VideoHolder}
-          alt="border"
-          className="w-full h-full object-contain absolute top-0"
-        />
+    <div className="w-[110%] h-[110%] -translate-y-[7%] -translate-x-[6%] relative rounded-md z-50">
+      <div className="absolute w-full h-full">
         <img
           src={VideoHolderBG}
           alt="border"
-          className="w-[120%] h-[120%] object-contain absolute -top-[10%]"
+          className="w-full h-full object-fill absolute top-0"
         />
+        {/* <img
+          src={VideoHolder}
+          alt="border"
+          className="w-full h-full object-cover absolute top-0"
+        /> */}
+      </div>
+      <div className="w-[95%] h-[91%] absolute top-[4%] left-1/2 -translate-x-1/2">
         <video
           ref={videoRef}
           onPlay={() => {
@@ -54,7 +56,7 @@ const Trailer: React.FC<Props> = ({ pauseVideo }) => {
           }}
           onPause={() => changeVideoState("paused")}
           controls={videoState === "play"}
-          className="w-[95%] h-[110%] object-cover absolute -top-[5%] left-1/2 -translate-x-1/2"
+          className="w-full h-full object-fill"
           src={video}
         ></video>
         {videoState != "play" && (

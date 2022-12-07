@@ -217,7 +217,7 @@ video::-webkit-media-controls-play-button {
     transform: "rotate(90deg)";
   }
 }
-.cardContainer:first-child {
+/* .cardContainer:first-child {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -231,4 +231,78 @@ video::-webkit-media-controls-play-button {
   top: 30%;
   left: 64%;
   transform: rotate(10deg);
+}
+.infoseperateCards:first-child {
+  transform: rotate(-6deg);
+}
+.infoseperateCards:nth-child(2) {
+  transform: rotate(6deg);
+}
+.infogroupcards:nth-child(odd) {
+  transform: rotate(-6deg);
+}
+.infogroupcards:nth-child(even) {
+  transform: rotate(6deg);
+}
+.infogroupcards:first-child {
+  transform: rotate(0deg);
+} */
+.backbutton {
+  grid-column: col1-start / col2-start;
+  grid-row: row1-start/row2-start;
+}
+.backbuttonline {
+  transform: rotate(25deg);
+  top: 0%;
+  transform-origin: left;
+}
+.titleBox {
+  grid-column: col2-start/col5-start;
+  grid-row: row1-start/row2-start;
+}
+.titleBoxTocard2Thread {
+  grid-column: col4-start/col8-start;
+  grid-row: row2-start/row4-start;
+}
+
+.titleBoxTocard2Threadrope {
+  transform: rotate(22deg);
+  top: -5%;
+  left: 30%;
+  transform-origin: left;
+}
+
+.prev1 {
+  grid-column: col1-start/col2-start;
+  grid-row: row5-start/row6-end;
+}
+
+.card1 {
+  grid-column: col3-start/col4-start;
+  grid-row: row4-start/row6-start;
+}
+
+.card2 {
+  grid-column: col5-start/col6-start;
+  grid-row: row3-start/row5-start;
+}
+
+.card3 {
+  grid-column: col7-start/col8-start;
+  grid-row: row4-start/row6-start;
+}
+
+.nextcard {
+  grid-column: col9-start/col9-end;
+  grid-row: row5-start/row6-end;
+}
+.centercardtoprev {
+  grid-column: col1-start/col8-start;
+  grid-row: row4-start/row6-start;
+}
+.centercardtoprevrope {
+  transform: rotate(-10deg);
+  top: 10%;
+  /* left: 30%; */
+  transform-origin: right;
 }
