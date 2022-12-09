@@ -217,36 +217,7 @@ video::-webkit-media-controls-play-button {
     transform: "rotate(90deg)";
   }
 }
-/* .cardContainer:first-child {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.cardContainer:nth-child(2) {
-  top: 30%;
-  left: 23%;
-  transform: rotate(-10deg);
-}
-.cardContainer:nth-child(3) {
-  top: 30%;
-  left: 64%;
-  transform: rotate(10deg);
-}
-.infoseperateCards:first-child {
-  transform: rotate(-6deg);
-}
-.infoseperateCards:nth-child(2) {
-  transform: rotate(6deg);
-}
-.infogroupcards:nth-child(odd) {
-  transform: rotate(-6deg);
-}
-.infogroupcards:nth-child(even) {
-  transform: rotate(6deg);
-}
-.infogroupcards:first-child {
-  transform: rotate(0deg);
-} */
+
 .backbutton {
   grid-column: col1-start / col2-start;
   grid-row: row1-start/row2-start;
@@ -266,7 +237,7 @@ video::-webkit-media-controls-play-button {
 }
 
 .titleBoxTocard2Threadrope {
-  transform: rotate(22deg);
+  transform: rotate(25deg);
   top: -5%;
   left: 30%;
   transform-origin: left;
@@ -280,6 +251,7 @@ video::-webkit-media-controls-play-button {
 .card1 {
   grid-column: col3-start/col4-start;
   grid-row: row4-start/row6-start;
+  transform: rotate(-6deg);
 }
 
 .card2 {
@@ -290,6 +262,7 @@ video::-webkit-media-controls-play-button {
 .card3 {
   grid-column: col7-start/col8-start;
   grid-row: row4-start/row6-start;
+  transform: rotate(6deg);
 }
 
 .nextcard {
@@ -305,4 +278,59 @@ video::-webkit-media-controls-play-button {
   top: 10%;
   /* left: 30%; */
   transform-origin: right;
+}
+.card3 {
+  grid-column: col7-start/col8-start;
+  grid-row: row4-start/row6-start;
+  transform: rotate(6deg);
+}
+/* meet the cast */
+.descCard {
+  grid-column: col5-start/col7-end;
+  grid-row: row2-start/row3-start;
+}
+.titleTodescCard {
+  grid-column: col4-start/col6-start;
+  grid-row: row1-start/row3-start;
+}
+.titleTodescCardRope {
+  transform: rotate(10deg);
+  top: 5%;
+
+  transform-origin: left;
+}
+.infocard {
+  grid-column: col2-start/col4-start;
+  grid-row: row2-start/row4-end;
+}
+.descCardtoinfocard {
+  grid-column: col3-start/col7-start;
+  grid-row: row2-start/row3-start;
+}
+.descCardtoinfocardRope {
+  transform: rotate(-5deg);
+  top: 10%;
+  transform-origin: right top;
+}
+.cardContainer {
+  grid-column: col5-start/col7-end;
+  grid-row: row4-start/row4-end;
+}
+.card:first-child {
+  transform: rotate(-6deg);
+}
+.card:nth-child(2) {
+  transform: rotate(6deg);
+}
+.cardContainerTocardInfo {
+  grid-column: col3-start/col6-start;
+  grid-row: row4-start/row4-end;
+}
+.cardContainerTocardInfoRope {
+  transform: rotate(15deg);
+  top: 50%;
+  transform-origin: right top;
+}
+.showmore:first-child {
+  background-color: red;
 }

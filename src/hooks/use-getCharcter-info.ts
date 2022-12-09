@@ -1,4 +1,4 @@
-import React, { useState as ReactState, useMemo } from "react";
+import React, { useState as ReactState, useMemo, useEffect } from "react";
 import { objectType } from "@/Interface/object";
 import { createState, useState } from "@hookstate/core";
 import { cast } from "@/data/cast";
@@ -12,23 +12,23 @@ const initialState: objectType = {
   desc: "",
 };
 
-const castInfoArray = createState<objectType[]>([initialState]);
+const filteredcastInfoArray = createState<objectType[]>(cast);
 const clickedId = createState<objectType>({});
 
 const useGetCharcterInfo = () => {
-  const useCastInfoArray = useState<objectType[]>(castInfoArray);
+  const useCastInfoArray = useState<objectType[]>(filteredcastInfoArray);
   const useClickedId = useState<objectType>(clickedId);
   const [restartPoint, setRestartPoint] = ReactState<number>(0);
   const [startPoint, setStartPoint] = ReactState<number>(0);
   const [displayingCards, setDisplayingCards] = ReactState<objectType[]>([]);
 
   useMemo(() => {
-    let array = cast.slice(startPoint, startPoint + 3);
+    let array = useCastInfoArray?.value.slice(startPoint, startPoint + 3);
     if (array.length >= 3) {
       setDisplayingCards(array);
     } else {
       setRestartPoint(3 - array.length);
-      let leftoutArray = cast.slice(0, 3 - array.length);
+      let leftoutArray = useCastInfoArray?.value.slice(0, 3 - array.length);
       setDisplayingCards(array.concat(leftoutArray));
     }
   }, [startPoint]);
@@ -40,29 +40,26 @@ const useGetCharcterInfo = () => {
     while (startPoint <= endPoint) {
       let midPoint = Math.floor((startPoint + endPoint) / 2);
       const currentElement = parseInt(cast[midPoint].id);
-      console.log(currentElement < Id);
       if (currentElement < Id) {
         startPoint = midPoint + 1;
       } else if (currentElement > Id) {
         endPoint = midPoint - 1;
       } else {
-        // clickedId.set(cast[midPoint].id);
         return cast[midPoint];
       }
     }
-    console.log("return");
+
     return;
   };
 
   const filterCastArray = (id: string) => {
-    console.log("filter", id);
     let clickedCard = searchCastById(id);
-    console.log({ clickedCard: clickedCard });
+
     if (!clickedCard) return;
     let filteration = cast.filter(
       (character) => character.id != clickedCard?.id
     );
-    castInfoArray.set(filteration);
+    filteredcastInfoArray.set(filteration);
     clickedId.set(clickedCard);
     return;
   };
@@ -87,7 +84,10 @@ const useGetCharcterInfo = () => {
   const getCharacterInfo = (id: string) => {
     if (!id) return;
     filterCastArray(id);
-    // setShowCardsInfo(true);
+  };
+
+  const resetState = () => {
+    filteredcastInfoArray.set(cast);
   };
 
   return {
@@ -98,6 +98,7 @@ const useGetCharcterInfo = () => {
     getCharacterInfo,
     changeDisplayingCards,
     displayingCards,
+    resetState,
   };
 };
 

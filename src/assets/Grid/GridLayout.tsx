@@ -79,7 +79,6 @@ const GridLayout = () => {
       className="w-full h-full grid  place-content-center"
     >
       <motion.div className="trailervideo relative">
-        {dispayingCompState?.value && <BackButton />}
         {!dispayingCompState?.value || dispayingCompState?.value == "video" ? (
           <Trailer />
         ) : (

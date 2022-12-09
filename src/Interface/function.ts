@@ -1,3 +1,3 @@
-export interface functionType {
-  func: any;
+export interface functionPropString {
+  func: (arg0: string) => any;
 }

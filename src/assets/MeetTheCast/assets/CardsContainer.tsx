@@ -1,25 +1,39 @@
-import React, { useState, useMemo, memo } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 import Cards from "./Cards";
-import { objectType } from "@/Interface/object";
-import { cast } from "@/data/cast";
 import useGetCharcterInfo from "@/hooks/use-getCharcter-info";
 import horizontalRope from "@/public/Images/ropehorizontal.png";
-import VideoHolderBG from "@/public/Images/boardElements/VideoHolderBG.png";
+import NextCard from "./NextCard";
+import PrevCard from "./PrevCard";
+import Title from "@/assets/Title/Title";
+import BackButton from "@/assets/BackButton/BackButton";
 
 interface Props {
-  setShowCardsInfo?: any;
+  setShowCardsInfo: (value: boolean) => void;
 }
 
+let classindex: number = 0;
+
 const CardsContainer: React.FC<Props> = ({ setShowCardsInfo }) => {
-  const {
-    filterCastArray,
-    useClickedId,
-    displayingCards,
-    getCharacterInfo,
-    changeDisplayingCards,
-  } = useGetCharcterInfo();
+  const { displayingCards, getCharacterInfo, changeDisplayingCards } =
+    useGetCharcterInfo();
+
+  const generateCardIndex = () => {
+    classindex += 1;
+    if (classindex > 3) {
+      classindex = 1;
+      return classindex;
+    }
+    return classindex;
+  };
+
+  const getCardInfo = (e: React.MouseEvent<HTMLElement>) => {
+    const target = e.target as HTMLDivElement;
+    getCharacterInfo(target?.id);
+    setShowCardsInfo(true);
+    return;
+  };
 
   return (
     <motion.div
@@ -33,25 +47,22 @@ const CardsContainer: React.FC<Props> = ({ setShowCardsInfo }) => {
       animate={{
         transform: "scale(1)",
         gridTemplateColumns:
-          "[col1-start] 12% [col2-start] 8% [col3-start] 12% [col4-start] 8% [col5-start] 12% [col6-start] 8% [col7-start] 12% [col8-start] 8% [col9-start] 12% [col9-end]",
+          "[col1-start] 12% [col2-start] 9% [col3-start] 13% [col4-start] 9% [col5-start] 13% [col6-start] 9% [col7-start] 13% [col8-start] 9% [col9-start] 13% [col9-end]",
         gridTemplateRows:
-          "[row1-start] 16% [row2-start] 16% [row3-start] 16% [row4-start] 16% [row5-start] 16% [row6-start] 16% [row6-end]",
+          "[row1-start] 16.6% [row2-start] 16.6% [row3-start] 16.6% [row4-start] 16.6% [row5-start] 16.6% [row6-start] 16.6% [row6-end]",
       }}
-      className="w-full h-[100%] relative  grid place-content-center p-5"
+      className="w-full h-[100%] relative  grid place-content-center py-5 px-10"
     >
       <div className="backbutton relative">
-        <div className="w-2/3 h-1 backbuttonline overflow-hidden absolute">
-          <img
-            src={horizontalRope}
-            alt="rope"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="w-1/2 h-[80%] bg-white absolute right-0 top-0 -rotate-6"></div>
+        <BackButton />
       </div>
-      <div className="titleBox bg-border ml-5 rotate-1 z-50"></div>
+      <div className="titleBox ml-5 rotate-1 z-50 flex items-end justify-end">
+        <div className="w-full h-2/3 relative">
+          <Title title="Meet the cast" />
+        </div>
+      </div>
       <div className="titleBoxTocard2Thread w-full h-full relative overflow-hidden">
-        <div className="w-full h-1 titleBoxTocard2Threadrope">
+        <div className="w-full h-[5px] titleBoxTocard2Threadrope">
           <img
             src={horizontalRope}
             alt="thread"
@@ -61,7 +72,7 @@ const CardsContainer: React.FC<Props> = ({ setShowCardsInfo }) => {
       </div>
 
       <div className="centercardtoprev relative">
-        <div className="centercardtoprevrope w-full h-1 absolute">
+        <div className="centercardtoprevrope w-full h-[5px] absolute">
           <img
             src={horizontalRope}
             alt="thread"
@@ -69,47 +80,21 @@ const CardsContainer: React.FC<Props> = ({ setShowCardsInfo }) => {
           />
         </div>
       </div>
-      <div className="prev1 z-50 -rotate-12 bg-white"></div>
-      <div className="card1 z-50 -rotate-6 relative">
-        <div className="w-full h-full absolute top-0">
-          <img
-            src={VideoHolderBG}
-            alt="border"
-            className="w-full h-full object-fill"
-          />
+
+      <PrevCard func={changeDisplayingCards} />
+
+      {displayingCards?.map((character) => (
+        <div
+          key={character?.id}
+          className={`card${generateCardIndex()} z-50 relative cursor-pointer`}
+          onClick={(e) => getCardInfo(e)}
+        >
+          <Cards character={character} />
         </div>
-      </div>
-      <div className="card2 z-50 bg-white"></div>
-      <div className="card3 z-50 rotate-6 bg-white"></div>
-      <div className="nextcard z-50 rotate-12 bg-white"></div>
+      ))}
+      <NextCard func={changeDisplayingCards} />
     </motion.div>
   );
 };
 
 export default CardsContainer;
-{
-  /* <>
-{displayingCards.map((character) => (
-  <Cards
-    key={character?.id}
-    classname="absolute"
-    data={character}
-    func={getCharacterInfo}
-  />
-))}
-
-<Cards
-  classname="absolute top-[70%] left-[4%] -rotate-12 z-50"
-  placeholderText="prev"
-  func={changeDisplayingCards}
-/>
-<Cards classname="absolute top-[70%] left-[4%] -rotate-[2deg] -z-20" />
-
-<Cards
-  classname="absolute top-[70%] left-[83%] rotate-12 z-50"
-  placeholderText="next"
-  func={changeDisplayingCards}
-/>
-<Cards classname="absolute top-[70%] left-[83%] rotate-[20deg] -z-20 pointer-events-none" />
-</> */
-}
