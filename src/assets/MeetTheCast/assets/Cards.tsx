@@ -3,7 +3,7 @@ import VideoHolderBG from "@/public/Images/boardElements/VideoHolderBG.png";
 import { objectType } from "@/Interface/object";
 
 interface Props {
-  character: objectType;
+  character?: objectType;
 }
 
 const Cards: React.FC<Props> = ({ character }) => {

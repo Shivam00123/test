@@ -1,21 +1,15 @@
-import React, { useState as ReactState, useMemo, useEffect } from "react";
-import { objectType } from "@/Interface/object";
+import React, { useState as ReactState, useMemo } from "react";
+
 import { createState, useState } from "@hookstate/core";
-import { cast } from "@/data/cast";
+import { objectType } from "@/Interface/object";
 
-const initialState: objectType = {
-  id: null,
-  name: "",
-  img: "",
-  gif: "",
-  date: "",
-  desc: "",
-};
-
-const filteredcastInfoArray = createState<objectType[]>(cast);
+const filteredcastInfoArray = createState<objectType[]>([]);
 const clickedId = createState<objectType>({});
 
-const useGetCharcterInfo = () => {
+const useGetCharcterInfo = (
+  cast: objectType[],
+  maxDisplayingCards: number = 3
+) => {
   const useCastInfoArray = useState<objectType[]>(filteredcastInfoArray);
   const useClickedId = useState<objectType>(clickedId);
   const [restartPoint, setRestartPoint] = ReactState<number>(0);
@@ -23,12 +17,12 @@ const useGetCharcterInfo = () => {
   const [displayingCards, setDisplayingCards] = ReactState<objectType[]>([]);
 
   useMemo(() => {
-    let array = useCastInfoArray?.value.slice(startPoint, startPoint + 3);
-    if (array.length >= 3) {
+    let array = cast.slice(startPoint, startPoint + maxDisplayingCards);
+    if (array.length >= maxDisplayingCards) {
       setDisplayingCards(array);
     } else {
-      setRestartPoint(3 - array.length);
-      let leftoutArray = useCastInfoArray?.value.slice(0, 3 - array.length);
+      setRestartPoint(maxDisplayingCards - array.length);
+      let leftoutArray = cast.slice(0, maxDisplayingCards - array.length);
       setDisplayingCards(array.concat(leftoutArray));
     }
   }, [startPoint]);
@@ -54,7 +48,6 @@ const useGetCharcterInfo = () => {
 
   const filterCastArray = (id: string) => {
     let clickedCard = searchCastById(id);
-
     if (!clickedCard) return;
     let filteration = cast.filter(
       (character) => character.id != clickedCard?.id
@@ -69,13 +62,13 @@ const useGetCharcterInfo = () => {
       if (restartPoint) {
         setStartPoint(restartPoint);
       } else {
-        setStartPoint(startPoint + 3);
+        setStartPoint(startPoint + maxDisplayingCards);
       }
     } else {
-      if (startPoint >= 3) {
-        setStartPoint(startPoint - 3);
+      if (startPoint >= maxDisplayingCards) {
+        setStartPoint(startPoint - maxDisplayingCards);
       } else {
-        setStartPoint(cast.length - (3 - startPoint));
+        setStartPoint(cast.length - (maxDisplayingCards - startPoint));
       }
     }
     setRestartPoint(0);
@@ -88,6 +81,7 @@ const useGetCharcterInfo = () => {
 
   const resetState = () => {
     filteredcastInfoArray.set(cast);
+    return;
   };
 
   return {

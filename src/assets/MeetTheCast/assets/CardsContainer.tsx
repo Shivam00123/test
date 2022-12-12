@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 
 import Cards from "./Cards";
@@ -8,6 +8,7 @@ import NextCard from "./NextCard";
 import PrevCard from "./PrevCard";
 import Title from "@/assets/Title/Title";
 import BackButton from "@/assets/BackButton/BackButton";
+import { cast } from "@/data/cast";
 
 interface Props {
   setShowCardsInfo: (value: boolean) => void;
@@ -17,7 +18,7 @@ let classindex: number = 0;
 
 const CardsContainer: React.FC<Props> = ({ setShowCardsInfo }) => {
   const { displayingCards, getCharacterInfo, changeDisplayingCards } =
-    useGetCharcterInfo();
+    useGetCharcterInfo(cast);
 
   const generateCardIndex = () => {
     classindex += 1;
@@ -83,7 +84,7 @@ const CardsContainer: React.FC<Props> = ({ setShowCardsInfo }) => {
 
       <PrevCard func={changeDisplayingCards} />
 
-      {displayingCards?.map((character) => (
+      {displayingCards?.map((character: any) => (
         <div
           key={character?.id}
           className={`card${generateCardIndex()} z-50 relative cursor-pointer`}

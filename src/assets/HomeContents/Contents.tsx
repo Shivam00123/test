@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import horizontalRope from "@/public/Images/ropehorizontal.png";
 import Pin from "../Pin/Pin";
-import { functionType } from "@/Interface/function";
+import { functionPropString } from "@/Interface/function";
 import blog from "@/public/Images/boardElements/Blog.png";
 import BlogImage from "@/public/Images/boardElements/BlogImage.png";
 import meetthecast from "@/public/Images/boardElements/meetthecast.png";
@@ -11,7 +11,7 @@ import SocialImage from "@/public/Images/boardElements/SocialImage.png";
 
 import pin from "@/public/Images/Pin.png";
 
-const Contents: React.FC<functionType> = ({ func }) => {
+const Contents: React.FC<functionPropString> = ({ func }) => {
   return (
     <>
       {" "}

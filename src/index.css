@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -19,11 +22,7 @@ code {
   transform: rotateY(180deg);
 }
 
-.videoContainer {
-  -webkit-backface-visibility: hidden; 
-  backface-visibility: hidden;
-  transform: rotateY(0deg);
-} */
+ */
 /* video::-webkit-media-controls-current-time-display {
   display: none;
 }
@@ -228,7 +227,7 @@ video::-webkit-media-controls-play-button {
   transform-origin: left;
 }
 .titleBox {
-  grid-column: col2-start/col5-start;
+  grid-column: col2-start/col4-start;
   grid-row: row1-start/row2-start;
 }
 .titleBoxTocard2Thread {
@@ -322,6 +321,9 @@ video::-webkit-media-controls-play-button {
 .card:nth-child(2) {
   transform: rotate(6deg);
 }
+.card:nth-child(3) {
+  transform: rotate(-6deg);
+}
 .cardContainerTocardInfo {
   grid-column: col3-start/col6-start;
   grid-row: row4-start/row4-end;
@@ -333,4 +335,149 @@ video::-webkit-media-controls-play-button {
 }
 .showmore:first-child {
   background-color: red;
+}
+.videoContainer {
+  grid-column: col1-start/col5-start;
+  grid-row: row2-start/row4-start;
+  /* background-color: red; */
+}
+.descContainer {
+  grid-column: col5-start/col7-end;
+  grid-row: row2-start/row4-start;
+}
+.title_to_desc {
+  grid-column: col3-start/col6-start;
+  grid-row: row1-start/row3-start;
+  /* background-color: red; */
+}
+.title_to_desc_rope {
+  transform: rotate(10deg);
+  top: 6%;
+  transform-origin: left;
+  background-color: black;
+}
+.desc_to_videoholder {
+  grid-column: col4-start/col7-start;
+  grid-row: row2-start/row4-start;
+  /* background-color: red; */
+}
+.desc_to_videoholder_rope {
+  transform: rotate(-15deg);
+  top: 20%;
+  transform-origin: right;
+  background-color: black;
+}
+.carouselHolder {
+  grid-column: col1-start/col7-end;
+  grid-row: row5-start/row5-end;
+}
+.rec.rec-dot {
+  display: none;
+}
+/* ----------------------------------------- */
+
+:root {
+  --up: 3;
+  --card-margin: 12px;
+  --card-shadow: rgba(46, 49, 52, 0.4);
+  --color-white: #fff;
+  --color-lightgrey: #ccc;
+  --color-ui: #999;
+  --color-ui-hover: #666;
+  --cardWidth: calc(96vw / var(--up));
+  --carouselWidth: calc(var(--cardWidth) * var(--num));
+  --carouselLeftMargin: calc(2vw - var(--cardWidth));
+
+  @media screen and (max-width: 900px) {
+    /*basically mobile*/
+    --up: 1;
+  }
+}
+
+.carouselwrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  margin: 0 0 0 var(--carouselLeftMargin);
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.prev {
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+  animation-name: prev;
+}
+.next {
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+  animation-name: next;
+}
+li {
+  text-align: center;
+  width: calc(var(--cardWidth) - var(--card-margin) * 4);
+  box-sizing: border-box;
+}
+
+.ui {
+  width: calc(100% - var(--card-margin) * 2);
+  padding: var(--card-margin);
+}
+/* button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-ui);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--color-white);
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.25);
+  border: 0;
+  transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+button::hover {
+  background: var(--color-ui-hover);
+}
+button:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 1);
+} */
+
+.carouselChild {
+  box-shadow: 0px 1px 2px 0px var(--card-shadow);
+  border-radius: 4px;
+  margin: var(--card-margin);
+  background: var(--color-white);
+}
+.material-icons {
+  font-size: 4.8rem;
+}
+p {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0;
+}
+
+@keyframes next {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(calc(0px + var(--cardWidth)));
+  }
+}
+
+@keyframes prev {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(calc(0px - var(--cardWidth)));
+  }
 }

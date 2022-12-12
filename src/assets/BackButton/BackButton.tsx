@@ -8,7 +8,7 @@ import useGetCharcterInfo from "@/hooks/use-getCharcter-info";
 
 const BackButton = () => {
   const dispayingCompState = useHookstate(useDisplayingComponent());
-  const { resetState } = useGetCharcterInfo();
+  const { resetState } = useGetCharcterInfo([]);
 
   const Onclick = () => {
     dispayingCompState.set("");

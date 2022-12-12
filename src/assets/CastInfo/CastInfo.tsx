@@ -9,7 +9,9 @@ import CharcterDetails from "./CharcterDetails";
 import CharacterDesc from "./CharacterDesc";
 import purplepin from "@/public/Images/MeetThecast/purplepin.png";
 import yellowpin from "@/public/Images/MeetThecast/yellowpin.png";
+import more from "@/public/Images/MeetThecast/more.png";
 import useGetCharcterInfo from "@/hooks/use-getCharcter-info";
+import { cast } from "@/data/cast";
 
 const CastInfo = () => {
   const {
@@ -17,7 +19,7 @@ const CastInfo = () => {
     getCharacterInfo,
     changeDisplayingCards,
     useClickedId,
-  } = useGetCharcterInfo();
+  } = useGetCharcterInfo(cast);
 
   const fetchClickedCardInfo = (e: React.MouseEvent<HTMLElement>) => {
     const target = e.target as HTMLDivElement;
@@ -120,25 +122,52 @@ const CastInfo = () => {
           </div>
         </div>
       </div>
-      <div className="cardContainer flex items-center justify-between pr-5 z-50">
-        {displayingCards.map((card) => (
+      <div className="cardContainer flex items-center justify-between pr-5 z-50 relative">
+        {displayingCards.map((card, index) => (
           <>
             <div
+              key={card?.id}
               className="w-1/4  h-full relative card cursor-pointer"
               onClick={(e) => fetchClickedCardInfo(e)}
             >
               <Cards character={card} />
+
+              <div
+                style={{
+                  visibility:
+                    index === displayingCards.length - 1 ? "visible" : "hidden",
+                }}
+                className="absolute top-[55%] -left-[20%] w-full h-1/2 pointer-events-none"
+              >
+                <img
+                  src={more}
+                  alt="more-img"
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
           </>
         ))}
+        <div className="w-1/4  h-full absolute card cursor-pointer right-[2%] -z-10 rotate-6">
+          <Cards />
+        </div>
       </div>
       <div className="cardContainerTocardInfo relative">
-        <div className="cardContainerTocardInfoRope w-full h-[5px] absolute">
+        <div className="cardContainerTocardInfoRope w-full h-[5px] absolute flex items-center">
           <img
             src={horizontalRope}
             alt="thread"
             className="w-full h-full object-fill"
           />
+        </div>
+        <div className="cardContainerTocardInfoRope w-full h-[5px] absolute flex items-center z-50">
+          <div className="w-8 h-8 absolute z-50  right-[25%]">
+            <img
+              src={purplepin}
+              alt="pin"
+              className="w-full h-full object-contain"
+            />
+          </div>
         </div>
       </div>
     </motion.div>
