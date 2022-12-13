@@ -354,7 +354,6 @@ video::-webkit-media-controls-play-button {
   transform: rotate(10deg);
   top: 6%;
   transform-origin: left;
-  background-color: black;
 }
 .desc_to_videoholder {
   grid-column: col4-start/col7-start;
@@ -377,4 +376,44 @@ video::-webkit-media-controls-play-button {
 }
 .slides:nth-child(even) {
   transform: rotate(4deg);
+}
+.messageBox {
+  grid-column: col3-start/col6-start;
+  grid-row: row2-start/row8-start;
+}
+.emailBox {
+  grid-column: col3-start/col6-start;
+  grid-row: row9-start/row10-start;
+}
+
+.youtubeIcon {
+  grid-column: col7-start/col9-start;
+  grid-row: row3-start/row4-start;
+}
+
+.twitterIcon {
+  grid-column: col7-start/col9-start;
+  grid-row: row5-start/row6-start;
+}
+.instagramIcon {
+  grid-column: col7-start/col9-start;
+  grid-row: row7-start/row8-start;
+}
+.titleToIcon {
+  grid-column: col3-start/col8-start;
+  grid-row: row1-start/row4-start;
+}
+.titleToIconRope {
+  transform: rotate(7deg);
+  top: 10%;
+  transform-origin: left;
+}
+.iconToEmailBox {
+  grid-column: col4-start/col8-start;
+  grid-row: row7-start/row9-start;
+}
+.iconToEmailBoxRope {
+  transform: rotate(-11deg);
+  top: 0%;
+  transform-origin: right;
 }

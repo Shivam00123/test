@@ -8,6 +8,9 @@ import meetthecast from "@/public/Images/boardElements/meetthecast.png";
 import MeetTheCastImage from "@/public/Images/boardElements/MeetTheCastImage.png";
 import Social from "@/public/Images/boardElements/social.png";
 import SocialImage from "@/public/Images/boardElements/SocialImage.png";
+import contactus from "@/public/Images/contactus.png";
+import holder from "@/public/Images/holder.png";
+import instagram from "@/public/Images/instagram.svg";
 
 import pin from "@/public/Images/Pin.png";
 
@@ -16,11 +19,6 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
     <>
       {" "}
       <div className="blog cursor-pointer relative bg-transparent">
-        {/* <Pin props="top-[30.9%] -right-[10%]" /> */}
-        {/* <di
-          onClick={() => func("blog")}
-          className="w-full h-full bg-[antiquewhite] absolute top-3 left-[8%] rotate-3"
-        > */}
         <img
           src={blog}
           alt="blog"
@@ -44,12 +42,22 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
       <div className="line1 h-[5px] w-full relative z-50">
         <Pin props="top-[10%] -left-[7%]" />
       </div>
-      <div className="mail relative  z-20">
+      <div className="mail relative z-20">
         <div
-          onClick={() => func("mail")}
-          className="w-1/2 h-full bg-[yellow] absolute top-[50%] -left-[20%] -rotate-12 cursor-pointer"
-        ></div>
-        <img src="" alt="" />
+          // onClick={() => func("mail")}
+          className="w-3/4 h-full absolute top-[50%] -left-[30%] -rotate-12 cursor-pointer"
+        >
+          <img
+            src={holder}
+            alt="background-image"
+            className="w-full h-full object-cover"
+          />
+          <img
+            src={instagram}
+            alt="instagram-logo"
+            className="w-1/2 h-1/2 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-[55%] -rotate-12"
+          />
+        </div>
       </div>
       <div className="line2 h-[5px] w-full relative overflow-hidden">
         <img
@@ -163,16 +171,12 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
         />
       </div>
       <div className="instagram relative">
-        <div className="w-full h-full absolute -top-[20%] -right-1/4 -rotate-12  cursor-pointer z-20">
+        <div className="w-full h-full absolute -top-[7%] -right-1/3 -rotate-6 z-20">
           <img
-            src={Social}
+            onClick={() => func("contactus")}
+            src={contactus}
             alt="picture"
-            className="w-full h-full object-contain absolute left-[10%] top-[20%]"
-          />
-          <img
-            src={SocialImage}
-            alt="picture"
-            className="w-[70%] h-[70%] object-contain absolute left-[23%] top-[27%]"
+            className="w-full h-full object-contain absolute left-[10%] top-[20%]  cursor-pointer"
           />
         </div>
       </div>

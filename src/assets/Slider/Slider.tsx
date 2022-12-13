@@ -10,7 +10,7 @@ interface Cardsprops {
 const Cards: React.FC<Cardsprops> = ({ item, changeCard }) => {
   return (
     <div
-      className="slides w-1/5 h-[80%] relative flex items-center justify-center"
+      className="slides w-1/5 h-[80%] relative flex items-center justify-center cursor-pointer"
       onClick={() => changeCard(item?.id)}
     >
       <div className="absolute top-0 w-full h-full">

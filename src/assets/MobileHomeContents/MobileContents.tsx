@@ -1,10 +1,10 @@
 import React from "react";
 
 import rope from "@/public/Images/rope.png";
-import { functionType } from "@/Interface/function";
+import { functionPropString } from "@/Interface/function";
 import Pin from "../Pin/Pin";
 
-const MobileContents: React.FC<functionType> = ({ func }) => {
+const MobileContents: React.FC<functionPropString> = ({ func }) => {
   return (
     <>
       <div className="thread1 relative ">

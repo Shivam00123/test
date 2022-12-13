@@ -6,6 +6,7 @@ import Blog from "../Cards/Blog";
 import Comic from "../Cards/Comic";
 import Mail from "../Cards/Mail";
 import Meet from "../Cards/Meet";
+import ContactUs from "../Cards/ContactUs";
 
 const CardsWrapper = () => {
   const displayingComponentState = useHookstate(useDisplayingComponent());
@@ -15,6 +16,7 @@ const CardsWrapper = () => {
       {displayingComponentState?.value == "mail" && <Mail />}
       {displayingComponentState?.value == "meet" && <Meet />}
       {displayingComponentState?.value == "comic" && <Comic />}
+      {displayingComponentState?.value == "contactus" && <ContactUs />}
     </div>
   );
 };
