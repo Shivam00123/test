@@ -6,8 +6,21 @@ import Title from "../Title/Title";
 import VideoHolderBorder from "../VideoHolderBorder/VideoHolderBorder";
 import horizontalRope from "@/public/Images/ropehorizontal.png";
 import Slider from "../Slider/Slider";
+import CharacterDesc from "../CharacterDesc";
+import VideoComponent from "../VideoComponent/VideoComponent";
+import { objectType } from "@/Interface/object";
 
-const BehindTheScenes = () => {
+interface ShortsProps {
+  cardInfo?: objectType;
+  changeCard: (id: string | number) => void;
+  filteredArray?: objectType[];
+}
+
+const ShortsLayout: React.FC<ShortsProps> = ({
+  cardInfo,
+  changeCard,
+  filteredArray,
+}) => {
   return (
     <div
       style={SixColThreeRows}
@@ -38,20 +51,27 @@ const BehindTheScenes = () => {
         </div>
       </div>
       <div className="videoContainer relative flex items-center justify-center">
-        <div className="w-[80%] h-[80%] relative">
+        <div className="w-[80%] h-[80%] relative flex items-center justify-center">
           <VideoHolderBorder />
+          <VideoComponent videoUrl={cardInfo?.videoUrl} />
         </div>
       </div>
       <div className="descContainer relative flex items-center justify-center">
         <div className="w-[70%] h-[80%] relative">
           <VideoHolderBorder />
+          <div className="w-full h-full absolute top-0  flex flex-col items-end justify-around">
+            <CharacterDesc
+              charactername={cardInfo?.title}
+              characterdesc={cardInfo?.desc}
+            />
+          </div>
         </div>
       </div>
-      <div className="carouselHolder relative">
-        <Slider />
+      <div className="carouselHolder relative grid place-items-center">
+        <Slider filteredArray={filteredArray} changeCard={changeCard} />
       </div>
     </div>
   );
 };
 
-export default BehindTheScenes;
+export default ShortsLayout;

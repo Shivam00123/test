@@ -6,7 +6,7 @@ import horizontalRope from "@/public/Images/ropehorizontal.png";
 import VideoHolderBG from "@/public/Images/boardElements/VideoHolderBG.png";
 import Cards from "../MeetTheCast/assets/Cards";
 import CharcterDetails from "./CharcterDetails";
-import CharacterDesc from "./CharacterDesc";
+import CharacterDesc from "../CharacterDesc";
 import purplepin from "@/public/Images/MeetThecast/purplepin.png";
 import yellowpin from "@/public/Images/MeetThecast/yellowpin.png";
 import more from "@/public/Images/MeetThecast/more.png";

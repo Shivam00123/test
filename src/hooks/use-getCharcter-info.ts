@@ -15,6 +15,7 @@ const useGetCharcterInfo = (
   const [restartPoint, setRestartPoint] = ReactState<number>(0);
   const [startPoint, setStartPoint] = ReactState<number>(0);
   const [displayingCards, setDisplayingCards] = ReactState<objectType[]>([]);
+  console.log(useCastInfoArray?.value);
 
   useMemo(() => {
     let array = cast.slice(startPoint, startPoint + maxDisplayingCards);
@@ -42,8 +43,6 @@ const useGetCharcterInfo = (
         return cast[midPoint];
       }
     }
-
-    return;
   };
 
   const filterCastArray = (id: string) => {
@@ -54,7 +53,6 @@ const useGetCharcterInfo = (
     );
     filteredcastInfoArray.set(filteration);
     clickedId.set(clickedCard);
-    return;
   };
 
   const changeDisplayingCards = (move: string) => {
@@ -74,14 +72,14 @@ const useGetCharcterInfo = (
     setRestartPoint(0);
   };
 
-  const getCharacterInfo = (id: string) => {
+  const getCharacterInfo = (id: string | number) => {
+    id = id.toString();
     if (!id) return;
     filterCastArray(id);
   };
 
   const resetState = () => {
     filteredcastInfoArray.set(cast);
-    return;
   };
 
   return {
