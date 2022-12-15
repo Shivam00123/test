@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import Cards from "./Cards";
@@ -9,6 +9,7 @@ import PrevCard from "./PrevCard";
 import Title from "@/assets/Title/Title";
 import BackButton from "@/assets/BackButton/BackButton";
 import { cast } from "@/data/cast";
+import useGenerateIndex from "@/hooks/use-generateIndex";
 
 interface Props {
   setShowCardsInfo: (value: boolean) => void;
@@ -17,17 +18,15 @@ interface Props {
 let classindex: number = 0;
 
 const CardsContainer: React.FC<Props> = ({ setShowCardsInfo }) => {
+  const IndexRef = useRef(useGenerateIndex(5));
   const { displayingCards, getCharacterInfo, changeDisplayingCards } =
-    useGetCharcterInfo(cast);
+    useGetCharcterInfo(cast, 5);
 
-  const generateCardIndex = () => {
-    classindex += 1;
-    if (classindex > 3) {
-      classindex = 1;
-      return classindex;
-    }
-    return classindex;
-  };
+  useEffect(() => {
+    return () => {
+      IndexRef.current.resetIndex();
+    };
+  }, []);
 
   const getCardInfo = (e: React.MouseEvent<HTMLElement>) => {
     const target = e.target as HTMLDivElement;
@@ -48,22 +47,22 @@ const CardsContainer: React.FC<Props> = ({ setShowCardsInfo }) => {
       animate={{
         transform: "scale(1)",
         gridTemplateColumns:
-          "[col1-start] 12% [col2-start] 9% [col3-start] 13% [col4-start] 9% [col5-start] 13% [col6-start] 9% [col7-start] 13% [col8-start] 9% [col9-start] 13% [col9-end]",
+          "[col1-start] 10% [col2-start] 3% [col3-start] 9% [col4-start] 13% [col5-start] 9% [col6-start] 13% [col7-start] 9% [col8-start] 6% [col9-start] 6% [col10-start] 9% [col11-start] 13% [col11-end]",
         gridTemplateRows:
-          "[row1-start] 16.6% [row2-start] 16.6% [row3-start] 16.6% [row4-start] 16.6% [row5-start] 16.6% [row6-start] 16.6% [row6-end]",
+          "[row1-start] 5% [row2-start] 5% [row3-start] 18% [row4-start] 18% [row5-start] 18% [row6-start] 18% [row7-start] 18% [row7-end]",
       }}
-      className="w-full h-[100%] relative  grid place-content-center py-5 px-10"
+      className="w-full h-[100%] relative  grid place-content-center"
     >
-      <div className="backbutton relative">
+      <div className="backbuttonCardContainer relative">
         <BackButton />
       </div>
-      <div className="titleBox ml-5 rotate-1 z-50 flex items-end justify-end">
+      <div className="titleBoxCardContainer ml-5 rotate-1 z-50 flex items-end justify-end">
         <div className="w-full h-2/3 relative">
           <Title title="Meet the cast" />
         </div>
       </div>
       <div className="titleBoxTocard2Thread w-full h-full relative overflow-hidden">
-        <div className="w-full h-[5px] titleBoxTocard2Threadrope">
+        <div className="w-[105%] h-[5px] titleBoxTocard2Threadrope">
           <img
             src={horizontalRope}
             alt="thread"
@@ -82,18 +81,18 @@ const CardsContainer: React.FC<Props> = ({ setShowCardsInfo }) => {
         </div>
       </div>
 
-      <PrevCard func={changeDisplayingCards} />
+      {/* <PrevCard func={changeDisplayingCards} /> */}
 
       {displayingCards?.map((character: any) => (
         <div
           key={character?.id}
-          className={`card${generateCardIndex()} z-50 relative cursor-pointer`}
+          className={`card${IndexRef.current.generateCardIndex()} z-50 relative cursor-pointer`}
           onClick={(e) => getCardInfo(e)}
         >
           <Cards character={character} />
         </div>
       ))}
-      <NextCard func={changeDisplayingCards} />
+      {/* <NextCard func={changeDisplayingCards} /> */}
     </motion.div>
   );
 };

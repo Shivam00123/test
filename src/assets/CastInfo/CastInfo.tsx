@@ -126,7 +126,7 @@ const CastInfo = () => {
         {displayingCards.map((card, index) => (
           <>
             <div
-              key={card?.id}
+              key={card.id}
               className="w-1/4  h-full relative card cursor-pointer"
               onClick={(e) => fetchClickedCardInfo(e)}
             >
@@ -139,11 +139,11 @@ const CastInfo = () => {
                 }}
                 className="absolute top-[55%] -left-[20%] w-full h-1/2 pointer-events-none"
               >
-                <img
+                {/* <img
                   src={more}
                   alt="more-img"
                   className="w-full h-full object-contain"
-                />
+                /> */}
               </div>
             </div>
           </>

@@ -1,10 +1,10 @@
-import React, { useState as ReactState, useMemo } from "react";
+import React, { useState as ReactState, useMemo, useEffect } from "react";
 
 import { createState, useState } from "@hookstate/core";
 import { objectType } from "@/Interface/object";
 
-const filteredcastInfoArray = createState<objectType[]>([]);
 const clickedId = createState<objectType>({});
+const filteredcastInfoArray = createState<objectType[]>([]);
 
 const useGetCharcterInfo = (
   cast: objectType[],
@@ -15,15 +15,16 @@ const useGetCharcterInfo = (
   const [restartPoint, setRestartPoint] = ReactState<number>(0);
   const [startPoint, setStartPoint] = ReactState<number>(0);
   const [displayingCards, setDisplayingCards] = ReactState<objectType[]>([]);
-  console.log(useCastInfoArray?.value);
 
   useMemo(() => {
-    let array = cast.slice(startPoint, startPoint + maxDisplayingCards);
+    let picked = useCastInfoArray.value.length ? useCastInfoArray.value : cast;
+    console.log({ picked });
+    let array = picked.slice(startPoint, startPoint + maxDisplayingCards);
     if (array.length >= maxDisplayingCards) {
       setDisplayingCards(array);
     } else {
       setRestartPoint(maxDisplayingCards - array.length);
-      let leftoutArray = cast.slice(0, maxDisplayingCards - array.length);
+      let leftoutArray = picked.slice(0, maxDisplayingCards - array.length);
       setDisplayingCards(array.concat(leftoutArray));
     }
   }, [startPoint]);

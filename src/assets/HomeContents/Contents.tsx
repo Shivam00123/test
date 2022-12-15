@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import horizontalRope from "@/public/Images/ropehorizontal.png";
 import Pin from "../Pin/Pin";
 import { functionPropString } from "@/Interface/function";
-import blog from "@/public/Images/boardElements/Blog.png";
+import blog from "@/public/Images/boardElements/newblog.png";
 import BlogImage from "@/public/Images/boardElements/BlogImage.png";
 import meetthecast from "@/public/Images/boardElements/meetthecast.png";
 import MeetTheCastImage from "@/public/Images/boardElements/MeetTheCastImage.png";
@@ -23,14 +23,14 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
           src={blog}
           alt="blog"
           onClick={() => func("blog")}
-          className="w-full h-full object-contain absolute -right-[20%] -top-[10%] z-20 cursor-pointer"
+          className="w-full h-full object-contain absolute -right-[28%] -top-[20%] z-20 cursor-pointer"
         />
 
-        <img
+        {/* <img
           src={BlogImage}
           alt="blog"
           className="w-1/2 h-1/2 object-contain absolute right-[6%] top-[22%] z-20 pointer-events-none"
-        />
+        /> */}
       </div>
       <div className="line1 h-[5px] w-full relative ">
         <img
@@ -45,7 +45,7 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
       <div className="mail relative z-20">
         <div
           // onClick={() => func("mail")}
-          className="w-3/4 h-full absolute top-[50%] -left-[30%] -rotate-12 cursor-pointer"
+          className="w-[60%] h-full absolute top-[50%] -left-[30%] -rotate-12 cursor-pointer"
         >
           <img
             src={holder}
@@ -55,7 +55,7 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
           <img
             src={instagram}
             alt="instagram-logo"
-            className="w-1/2 h-1/2 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-[55%] -rotate-12"
+            className="w-[60%] h-[60%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-[55%] -rotate-12"
           />
         </div>
       </div>
@@ -67,7 +67,7 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
         />
       </div>
       <div className="line2 h-[5px] w-full relative z-50">
-        <Pin props="-top-[10%] -right-[1%]" />
+        <Pin props="top-[100%] right-[10%]" />
       </div>
       <div className="meet relative z-20">
         {/* <div

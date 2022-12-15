@@ -221,6 +221,10 @@ video::-webkit-media-controls-play-button {
   grid-column: col1-start / col2-start;
   grid-row: row1-start/row2-start;
 }
+.backbuttonCardContainer {
+  grid-column: col1-start / col2-start;
+  grid-row: row1-start/row3-start;
+}
 .backbuttonline {
   transform: rotate(25deg);
   top: 0%;
@@ -231,58 +235,64 @@ video::-webkit-media-controls-play-button {
   grid-row: row1-start/row2-start;
 }
 .titleBoxTocard2Thread {
-  grid-column: col4-start/col8-start;
-  grid-row: row2-start/row4-start;
+  grid-column: col3-start/col9-start;
+  grid-row: row2-start/row6-start;
+  overflow: hidden;
+}
+.titleBoxCardContainer {
+  grid-column: col2-start/col5-start;
+  grid-row: row1-start/row3-start;
 }
 
 .titleBoxTocard2Threadrope {
-  transform: rotate(25deg);
-  top: -5%;
-  left: 30%;
+  transform: rotate(21deg);
+  top: 20%;
   transform-origin: left;
 }
 
-.prev1 {
-  grid-column: col1-start/col2-start;
-  grid-row: row5-start/row6-end;
-}
-
 .card1 {
-  grid-column: col3-start/col4-start;
-  grid-row: row4-start/row6-start;
-  transform: rotate(-6deg);
+  grid-column: col1-start/col3-start;
+  grid-row: row6-start/row6-end;
+  transform: rotate(-12deg) translate(30%, -10%);
 }
 
 .card2 {
-  grid-column: col5-start/col6-start;
-  grid-row: row3-start/row5-start;
+  grid-column: col4-start/col5-start;
+  grid-row: row5-start/row7-start;
+  transform: rotate(-6deg);
 }
 
 .card3 {
-  grid-column: col7-start/col8-start;
+  grid-column: col6-start/col7-start;
   grid-row: row4-start/row6-start;
+}
+
+.card4 {
+  grid-column: col8-start/col10-start;
+  grid-row: row5-start/row7-start;
   transform: rotate(6deg);
 }
 
-.nextcard {
-  grid-column: col9-start/col9-end;
-  grid-row: row5-start/row6-end;
+.card5 {
+  grid-column: col11-start/col11-end;
+  grid-row: row6-start/row7-end;
+  transform: rotate(12deg) translate(-30%, -10%);
 }
 .centercardtoprev {
-  grid-column: col1-start/col8-start;
-  grid-row: row4-start/row6-start;
+  grid-column: col2-start/col9-start;
+  grid-row: row5-start/row6-start;
 }
 .centercardtoprevrope {
-  transform: rotate(-10deg);
-  top: 10%;
+  transform: rotate(-5deg);
+  top: 30%;
   /* left: 30%; */
   transform-origin: right;
 }
-.card3 {
+/* .card3 {
   grid-column: col7-start/col8-start;
   grid-row: row4-start/row6-start;
   transform: rotate(6deg);
-}
+} */
 /* meet the cast */
 .descCard {
   grid-column: col5-start/col7-end;
@@ -333,9 +343,6 @@ video::-webkit-media-controls-play-button {
   top: 50%;
   transform-origin: right top;
 }
-.showmore:first-child {
-  background-color: red;
-}
 .videoContainer {
   grid-column: col1-start/col5-start;
   grid-row: row2-start/row4-start;
@@ -351,7 +358,7 @@ video::-webkit-media-controls-play-button {
   /* background-color: red; */
 }
 .title_to_desc_rope {
-  transform: rotate(10deg);
+  transform: rotate(12deg);
   top: 6%;
   transform-origin: left;
 }
@@ -364,7 +371,6 @@ video::-webkit-media-controls-play-button {
   transform: rotate(-15deg);
   top: 20%;
   transform-origin: right;
-  background-color: black;
 }
 .carouselHolder {
   grid-column: col1-start/col7-end;
@@ -377,43 +383,58 @@ video::-webkit-media-controls-play-button {
 .slides:nth-child(even) {
   transform: rotate(4deg);
 }
+.slidePin1 {
+  right: 20%;
+}
+.slidePin2 {
+  left: 15%;
+}
+.slidePin3 {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slidePin4 {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .messageBox {
   grid-column: col3-start/col6-start;
-  grid-row: row2-start/row8-start;
+  grid-row: row2-start/row10-start;
 }
 .emailBox {
   grid-column: col3-start/col6-start;
-  grid-row: row9-start/row10-start;
+  grid-row: row11-start/row13-start;
 }
 
 .youtubeIcon {
   grid-column: col7-start/col9-start;
-  grid-row: row3-start/row4-start;
+  grid-row: row3-start/row5-start;
 }
 
 .twitterIcon {
   grid-column: col7-start/col9-start;
-  grid-row: row5-start/row6-start;
+  grid-row: row6-start/row7-start;
 }
 .instagramIcon {
   grid-column: col7-start/col9-start;
-  grid-row: row7-start/row8-start;
+  grid-row: row8-start/row10-start;
 }
 .titleToIcon {
   grid-column: col3-start/col8-start;
   grid-row: row1-start/row4-start;
 }
 .titleToIconRope {
-  transform: rotate(7deg);
-  top: 10%;
-  transform-origin: left;
+  transform: rotate(9deg);
+  top: 15%;
+  transform-origin: bottom left;
 }
 .iconToEmailBox {
   grid-column: col4-start/col8-start;
-  grid-row: row7-start/row9-start;
+  grid-row: row8-start/row12-start;
 }
 .iconToEmailBoxRope {
-  transform: rotate(-11deg);
+  transform: rotate(-10deg);
   top: 0%;
-  transform-origin: right;
+  transform-origin: right top;
 }
