@@ -9,7 +9,6 @@ import CharcterDetails from "./CharcterDetails";
 import CharacterDesc from "../CharacterDesc";
 import purplepin from "@/public/Images/MeetThecast/purplepin.png";
 import yellowpin from "@/public/Images/MeetThecast/yellowpin.png";
-import more from "@/public/Images/MeetThecast/more.png";
 import useGetCharcterInfo from "@/hooks/use-getCharcter-info";
 import { cast } from "@/data/cast";
 

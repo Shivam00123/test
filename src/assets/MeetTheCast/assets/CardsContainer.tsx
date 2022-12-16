@@ -19,8 +19,7 @@ let classindex: number = 0;
 
 const CardsContainer: React.FC<Props> = ({ setShowCardsInfo }) => {
   const IndexRef = useRef(useGenerateIndex(5));
-  const { displayingCards, getCharacterInfo, changeDisplayingCards } =
-    useGetCharcterInfo(cast, 5);
+  const { displayingCards, getCharacterInfo } = useGetCharcterInfo(cast, 5);
 
   useEffect(() => {
     return () => {

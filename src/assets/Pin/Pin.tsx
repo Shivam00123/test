@@ -12,7 +12,7 @@ const Pin: React.FC<Props> = ({ props }) => {
   return (
     <div
       style={{ display: dispayingCompState?.value ? "none" : "" }}
-      className={`absolute w-4  h-3  -translate-y-1/2  ${props}`}
+      className={`absolute w-4  h-3  -translate-y-1/2 z-50  ${props}`}
     >
       <img src={pin} alt="pin" className="w-full h-full object-contain" />
     </div>

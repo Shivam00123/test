@@ -6,6 +6,7 @@ import { useDisplayingComponent } from "@/globalStates/states";
 import MobileCardsWrapper from "@/assets/MobileCardWrapper/MobileCardsWrapper";
 import rope from "@/public/Images/rope.png";
 import MobileContents from "@/assets/MobileHomeContents/MobileContents";
+import boardImg from "@/public/Images/board.png";
 
 const MobileHome = () => {
   const [expandMainCard, setExpandingMainCard] = useState<boolean>(false);
@@ -41,7 +42,12 @@ const MobileHome = () => {
   };
 
   return (
-    <div className="min-w-screen w-screen h-screen bg-[pink] flex flex-col items-center justify-start space-y-4 p-3 lock-orientation ">
+    <div className="min-w-screen w-screen h-screen flex flex-col items-center justify-start space-y-4 p-3 lock-orientation relative">
+      <img
+        src={boardImg}
+        alt="board"
+        className="w-full h-full object-cover absolute top-0 -z-10"
+      />
       <div className="w-full h-fit flex flex-col items-center justify-center">
         <h1 className="font-bold text-3xl">Detective</h1>
         <h2 className="font-bold text-2xl">Dotson</h2>
