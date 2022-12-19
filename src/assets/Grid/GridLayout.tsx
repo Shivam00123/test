@@ -10,6 +10,8 @@ import CardsWrapper from "../CardsWrapper/CardsWrapper";
 import Trailer from "../Trailer/Trailer";
 import BackButton from "../BackButton/BackButton";
 import Contents from "../HomeContents/Contents";
+import Title from "../Title/Title";
+import titleImg from "@/public/Images/for website/homepage - web/title.png";
 
 const GridLayout = () => {
   const [showCards, setShowCards] = useState<boolean>(false);
@@ -93,6 +95,15 @@ const GridLayout = () => {
       transition={{ duration: 2, type: "spring", stiffness: 100 }}
       className="w-full h-full grid  place-content-center"
     >
+      {!dispayingCompState?.value && (
+        <div className="absolute top-5 w-[30%] h-[15%] left-1/2 -translate-x-1/2">
+          <img
+            src={titleImg}
+            alt="title"
+            className="w-full h-full object-contain"
+          />
+        </div>
+      )}
       <motion.div className="trailervideo relative">
         {!dispayingCompState?.value || dispayingCompState?.value == "video" ? (
           <Trailer />

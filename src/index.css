@@ -438,3 +438,46 @@ video::-webkit-media-controls-play-button {
   top: 0%;
   transform-origin: right top;
 }
+.comictitle {
+  grid-column: col5-start/col6-end;
+  grid-row: row1-start/row2-start;
+}
+.comicsubtitle {
+  grid-column: col5-start/col6-end;
+  grid-row: row2-start/row3-start;
+}
+.comicPages {
+  grid-column: col1-start/col6-start;
+  grid-row: row3-start/row4-end;
+}
+.comicCard:first-child {
+  transform: rotate(-4deg) translateX(-3%);
+  z-index: 50;
+}
+.comicCard:nth-child(2) {
+  transform: rotate(-1deg) translate(-3%, -10%);
+  z-index: 40;
+}
+.comicCard:nth-child(3) {
+  transform: rotate(5deg) translateX(-3%);
+  z-index: 30;
+}
+.titleToComicOneCard {
+  grid-column: col3-start/col6-start;
+  grid-row: row1-start/row4-start;
+}
+.titleToComicOneCardRope {
+  transform: rotate(-17deg);
+  top: 5%;
+  right: 4%;
+  transform-origin: right;
+}
+.CardOneToBottom {
+  grid-column: col2-start/col4-start;
+  grid-row: row5-start/row6-end;
+}
+.CardOneToBottomRope {
+  transform: rotate(15deg);
+  top: 5%;
+  transform-origin: left;
+}
