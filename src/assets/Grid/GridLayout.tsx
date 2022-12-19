@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useHookstate } from "@hookstate/core";
-import { useDisplayingComponent } from "@/globalStates/states";
+import {
+  setContentStartingText,
+  useDisplayingComponent,
+} from "@/globalStates/states";
 import { objectType } from "@/Interface/object";
 import CardsWrapper from "../CardsWrapper/CardsWrapper";
 import Trailer from "../Trailer/Trailer";
@@ -13,14 +16,22 @@ const GridLayout = () => {
   const [expandCards, setExpandCards] = useState<boolean>(false);
   const [isMountingState, setIsMountingState] = useState<boolean>(true);
   const dispayingCompState = useHookstate(useDisplayingComponent());
+  const [opacityNumber, setOpacityNumber] = useState<number>(1);
 
   useEffect(() => {
     if (!dispayingCompState?.value) {
+      setOpacityNumber(1);
       setTimeout(() => {
         setExpandCards(true);
         setShowCards(true);
       }, 300);
     } else {
+      setTimeout(() => {
+        setOpacityNumber(0);
+      }, 500);
+      setTimeout(() => {
+        setOpacityNumber(1);
+      }, 500);
       setIsMountingState(false);
       setExpandCards(false);
       setTimeout(() => {
@@ -32,6 +43,7 @@ const GridLayout = () => {
   const variants: objectType = {
     before: {
       transform: "scale(1)",
+      opacity: opacityNumber,
       gridTemplateColumns:
         "[col1-start] 0% [col2-start] 0% [col3-start] 35% [col4-start] 0% [col5-start] 0% [col5-end]",
       gridTemplateRows:
@@ -39,6 +51,7 @@ const GridLayout = () => {
     },
     after: {
       transform: "scale(1)",
+      opacity: opacityNumber,
       gridTemplateColumns:
         "[col1-start] 16% [col2-start] 16% [col3-start] 35% [col4-start] 16% [col5-start] 16% [col5-end]",
       gridTemplateRows:
@@ -46,6 +59,7 @@ const GridLayout = () => {
     },
     expandfull: {
       transform: "scale(1)",
+      opacity: opacityNumber,
       gridTemplateColumns:
         "[col1-start] 0% [col2-start] 0% [col3-start] 100% [col4-start] 0% [col5-start] 0% [col5-end]",
       gridTemplateRows:
@@ -56,6 +70,7 @@ const GridLayout = () => {
   const switchComponentTo = (comp: string) => {
     if (!comp) return;
     dispayingCompState.set(comp);
+    setContentStartingText(comp);
   };
 
   return (

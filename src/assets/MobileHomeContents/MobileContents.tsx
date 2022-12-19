@@ -30,9 +30,9 @@ const MobileContents: React.FC<functionPropString> = ({ func }) => {
         </div>
       </div>
       <div className="comp relative" onClick={() => func("blog")}>
-        <Pin props="top-[0%] left-[47%]" />
+        <Pin props="-top-[6%] left-[47%]" />
         <Pin props="-bottom-[10%] left-[47%]" />
-        <Pin props="bottom-[10%] left-[24%]" />
+        <Pin props="bottom-[20%] left-[25%]" />
         <div className="absolute top-0 w-full h-full left-1/2 -translate-x-1/2 flex items-center justify-center">
           <img
             src={contactus}
@@ -49,7 +49,7 @@ const MobileContents: React.FC<functionPropString> = ({ func }) => {
           <img
             src={blog}
             alt="contactus"
-            className="w-full h-[105%] object-contain absolute"
+            className="w-[125%] h-[125%] object-cover absolute"
           />
         </div>
       </div>
@@ -59,9 +59,9 @@ const MobileContents: React.FC<functionPropString> = ({ func }) => {
         <Pin props="bottom-[0%] right-[17%]" />
         <div className="absolute top-0 w-4/5 h-full flex items-center justify-center left-1/2 -translate-x-1/2  -rotate-3">
           <img
-            src={comic}
+            src={meetthecast}
             alt="contactus"
-            className="w-full h-[115%] object-contain absolute left-[5%]"
+            className="w-full h-[125%] object-contain absolute left-[5%]"
           />
         </div>
       </div>
@@ -76,7 +76,7 @@ const MobileContents: React.FC<functionPropString> = ({ func }) => {
         <Pin props="top-[51%] left-[13%]" />
         <div className="absolute top-0 w-4/5 h-full flex items-center justify-center left-1/2 -translate-x-1/2  -rotate-6 z-40">
           <img
-            src={meetthecast}
+            src={comic}
             alt="contactus"
             className="w-[150%] h-[150%] object-contain absolute"
           />

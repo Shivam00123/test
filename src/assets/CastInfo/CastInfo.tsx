@@ -11,6 +11,7 @@ import purplepin from "@/public/Images/MeetThecast/purplepin.png";
 import yellowpin from "@/public/Images/MeetThecast/yellowpin.png";
 import useGetCharcterInfo from "@/hooks/use-getCharcter-info";
 import { cast } from "@/data/cast";
+import castcard from "@/public/Images/castcard.png";
 
 const CastInfo = () => {
   const {
@@ -31,17 +32,17 @@ const CastInfo = () => {
 
   return (
     <motion.div
-      initial={{
-        gridTemplateColumns:
-          "[col1start] 0% [col2-start] 0% [col3-start] 0% [col4-start] 0% [col5-start] 0% [col6-start] 0% [col7-start] 0% [col7-end]",
-        gridTemplateRows:
-          " [row1-start] 0% [row2-start] 0% [row3-start] 0% [row4-start] 0% [row4-end]",
-      }}
-      animate={{
+      style={{
         gridTemplateColumns:
           "[col1-start] 10% [col2-start] 15% [col3-start] 15% [col4-start] 10% [col5-start] 10% [col6-start] 30% [col7-start] 10% [col7-end]",
         gridTemplateRows:
           " [row1-start] 10% [row2-start] 50% [row3-start] 5% [row4-start] 35% [row4-end]",
+      }}
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
       }}
       transition={{
         duration: 0.5,
@@ -74,7 +75,7 @@ const CastInfo = () => {
               className="w-full h-full object-fill"
             />
           </div>
-          <div className="w-full h-[70%] absolute bottom-0">
+          <div className="w-full h-[74%] absolute bottom-0 pl-3 mb-3">
             <CharacterDesc
               charactername={useClickedId?.value?.name}
               characterdesc={useClickedId?.value?.desc}
@@ -83,10 +84,10 @@ const CastInfo = () => {
         </div>
       </div>
       <div className="infocard grid place-items-center">
-        <div className="w-[80%] h-[90%] -rotate-6 relative z-20">
-          <div className="w-full h-full absolute top-0 ">
+        <div className="w-[85%] h-[95%] -rotate-6 relative z-20">
+          <div className="w-full h-full absolute top-0 z-50">
             <img
-              src={VideoHolderBG}
+              src={castcard}
               alt="border"
               className="w-full h-full object-fill"
             />

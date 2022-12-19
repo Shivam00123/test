@@ -11,8 +11,10 @@ import SocialImage from "@/public/Images/boardElements/SocialImage.png";
 import contactus from "@/public/Images/contactus.png";
 import holder from "@/public/Images/holder.png";
 import instagram from "@/public/Images/instagram.svg";
+import whiteback from "@/public/Images/whiteback.svg";
 
 import pin from "@/public/Images/Pin.png";
+import GetAppButton from "../GetAppButton/GetAppButton";
 
 const Contents: React.FC<functionPropString> = ({ func }) => {
   return (
@@ -141,7 +143,7 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
           </div>
           <div className="h-[5px] w-full absolute top-[20%] z-50">
             <Pin props="top-[90%] -right-[2%]" />
-            <Pin props="top-[90%] left-[20%]" />
+            <Pin props="top-[0%] left-[42%]" />
           </div>
         </div>
         <div className="absolute top-0 w-full h-full -left-[37%]">
@@ -153,14 +155,15 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
             />
           </div>
           <div className="h-[5px] w-full  absolute top-[20%] z-50">
-            <Pin props="top-[90%] right-[33%]" />
+            <Pin props="top-[90%] right-[45%]" />
             <Pin props="top-[50%] left-[0%]" />
           </div>
         </div>
       </div>
       <div className="playbutton  relative">
-        <div className="w-1/2 h-3/4 bg-[black] absolute top-0 left-1/2 -translate-x-1/2 cursor-pointer z-20">
-          <Pin props="top-[15%] left-1/2 -translate-x-1/2" />
+        <div className="w-[80%] h-3/4 absolute top-0 left-1/2 -translate-x-1/2 cursor-pointer z-20">
+          <Pin props="top-[25%] left-1/2 -translate-x-1/2" />
+          <GetAppButton />
         </div>
       </div>
       <div className="line5 h-[5px] w-1/3  relative overflow-hidden">
@@ -171,7 +174,7 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
         />
       </div>
       <div className="instagram relative">
-        <div className="w-full h-full absolute -top-[7%] -right-1/3 -rotate-6 z-20">
+        <div className="w-full h-full absolute -top-[20%] -right-1/3 -rotate-3 z-20">
           <img
             onClick={() => func("contactus")}
             src={contactus}

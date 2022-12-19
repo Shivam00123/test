@@ -1,6 +1,5 @@
 import GridLayout from "@/assets/Grid/GridLayout";
 import MeetTheCast from "@/assets/MeetTheCast/MeetTheCast";
-import { useTrailerState } from "@/globalStates/states";
 import { useHookstate } from "@hookstate/core";
 import React from "react";
 import boardImg from "@/public/Images/board.png";

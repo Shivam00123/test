@@ -36,15 +36,7 @@ const CardsContainer: React.FC<Props> = ({ setShowCardsInfo }) => {
 
   return (
     <motion.div
-      initial={{
-        transform: "scale(0)",
-        gridTemplateColumns:
-          "[col1-start] 0% [col2-start] 0% [col3-start] 0% [col4-start] 0% [col5-start] 0% [col6-start] 0% [col7-start] 0% [col8-start] 0% [col9-start] 0% [col9-end]",
-        gridTemplateRows:
-          "[row1-start] 0% [row2-start] 0% [row3-start] 0% [row4-start] 0% [row5-start] 0% [row6-start] 0% [row6-end]",
-      }}
-      animate={{
-        transform: "scale(1)",
+      style={{
         gridTemplateColumns:
           "[col1-start] 10% [col2-start] 3% [col3-start] 9% [col4-start] 13% [col5-start] 9% [col6-start] 13% [col7-start] 9% [col8-start] 6% [col9-start] 6% [col10-start] 9% [col11-start] 13% [col11-end]",
         gridTemplateRows:

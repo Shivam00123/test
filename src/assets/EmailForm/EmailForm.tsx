@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import sendbutton from "@/public/Images/send.png";
+import whiteback from "@/public/Images/whiteback.svg";
 import VideoHolderBG from "@/public/Images/boardElements/VideoHolderBG.png";
 import holder from "@/public/Images/holder.png";
 import yellowpin from "@/public/Images/MeetThecast/yellowpin.png";

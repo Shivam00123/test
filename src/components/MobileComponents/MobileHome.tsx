@@ -7,6 +7,7 @@ import MobileCardsWrapper from "@/assets/MobileCardWrapper/MobileCardsWrapper";
 import rope from "@/public/Images/rope.png";
 import MobileContents from "@/assets/MobileHomeContents/MobileContents";
 import boardImg from "@/public/Images/board.png";
+import title from "@/public/Images/for website/homepage - web/title.png";
 
 const MobileHome = () => {
   const [expandMainCard, setExpandingMainCard] = useState<boolean>(false);
@@ -48,9 +49,8 @@ const MobileHome = () => {
         alt="board"
         className="w-full h-full object-cover absolute top-0 -z-10"
       />
-      <div className="w-full h-fit flex flex-col items-center justify-center">
-        <h1 className="font-bold text-3xl">Detective</h1>
-        <h2 className="font-bold text-2xl">Dotson</h2>
+      <div className="w-full h-[15%] flex flex-col items-center justify-center z-50">
+        <img src={title} alt="title" className="w-full h-full object-contain" />
       </div>
       <motion.div
         initial={{
