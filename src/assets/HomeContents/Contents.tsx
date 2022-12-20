@@ -2,37 +2,26 @@ import React, { memo } from "react";
 import horizontalRope from "@/public/Images/ropehorizontal.png";
 import Pin from "../Pin/Pin";
 import { functionPropString } from "@/Interface/function";
-import blog from "@/public/Images/boardElements/newblog.png";
-import BlogImage from "@/public/Images/boardElements/BlogImage.png";
+import blog from "@/public/Images/for website/homepage - web/blog.png";
 import meetthecast from "@/public/Images/boardElements/meetthecast.png";
 import MeetTheCastImage from "@/public/Images/boardElements/MeetTheCastImage.png";
-import Social from "@/public/Images/boardElements/social.png";
-import SocialImage from "@/public/Images/boardElements/SocialImage.png";
 import contactus from "@/public/Images/contactus.png";
 import holder from "@/public/Images/holder.png";
 import instagram from "@/public/Images/instagram.svg";
-import whiteback from "@/public/Images/whiteback.svg";
-
-import pin from "@/public/Images/Pin.png";
+import comic from "@/public/Images/for website/homepage - web/comic.png";
 import GetAppButton from "../GetAppButton/GetAppButton";
 
 const Contents: React.FC<functionPropString> = ({ func }) => {
   return (
     <>
       {" "}
-      <div className="blog cursor-pointer relative bg-transparent">
+      <div className="blog cursor-pointer relative">
         <img
           src={blog}
           alt="blog"
           onClick={() => func("blog")}
-          className="w-full h-full object-contain absolute -right-[28%] -top-[20%] z-20 cursor-pointer"
+          className="w-full h-full object-contain absolute top-[15%] -left-[10%]  z-20 cursor-pointer -rotate-12"
         />
-
-        {/* <img
-          src={BlogImage}
-          alt="blog"
-          className="w-1/2 h-1/2 object-contain absolute right-[6%] top-[22%] z-20 pointer-events-none"
-        /> */}
       </div>
       <div className="line1 h-[5px] w-full relative ">
         <img
@@ -42,12 +31,12 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
         />
       </div>
       <div className="line1 h-[5px] w-full relative z-50">
-        <Pin props="top-[10%] -left-[7%]" />
+        <Pin props="top-[10%] left-[16%]" />
       </div>
       <div className="mail relative z-20">
         <div
           // onClick={() => func("mail")}
-          className="w-[60%] h-full absolute top-[50%] -left-[30%] -rotate-12 cursor-pointer"
+          className="w-[60%] h-full absolute top-[50%] -left-[30%] rotate-12 cursor-pointer"
         >
           <img
             src={holder}
@@ -57,7 +46,7 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
           <img
             src={instagram}
             alt="instagram-logo"
-            className="w-[60%] h-[60%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-[55%] -rotate-12"
+            className="w-[60%] h-[60%] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-[55%] -rotate-3"
           />
         </div>
       </div>
@@ -80,12 +69,12 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
           src={meetthecast}
           alt="meetthecast"
           onClick={() => func("meet")}
-          className="w-[120%] h-[120%] object-contain absolute top-0 -left-[10%] cursor-pointer"
+          className="w-[90%] h-[90%] object-contain absolute -top-[12%] -left-[10%] cursor-pointer"
         />
         <img
           src={MeetTheCastImage}
           alt="meetthecast"
-          className="w-[78%] h-[78%] object-contain absolute top-[12%] -left-[8%] pointer-events-none"
+          className="w-[58%] h-[58%] object-contain absolute -top-[3%] -left-[1%] pointer-events-none"
         />
       </div>
       <div className="line3 h-[5px] w-full  relative overflow-hidden">
@@ -107,20 +96,27 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="meetToComicThreadRope h-[5px] w-full  flex-shrink-0 absolute z-50 ">
+          {/* <div className="meetToComicThreadRope h-[5px] w-full  flex-shrink-0 absolute z-50 ">
             <Pin props="top-[0%] right-[0%]" />
             <Pin props="top-[90%] -left-[8%]" />
 
-            {/* 
-            <Pin props="top-[30%] right-[50%]" /> */}
-          </div>
+         
+            <Pin props="top-[30%] right-[50%]" /> 
+          </div> */}
         </div>
       </div>
       <div className="comic relative z-20">
         <div
           onClick={() => func("comic")}
-          className="w-2/3 h-full bg-[green] absolute -top-[20%] left-[10%]  -rotate-6 cursor-pointer"
-        ></div>
+          className="w-2/3 h-full  absolute -top-[25%] left-[%]  -rotate-6 cursor-pointer"
+        >
+          <img
+            onClick={() => func("comic")}
+            src={comic}
+            alt="picture"
+            className="w-[125%] h-[125%] object-contain absolute top-[0%] left-[30%]  cursor-pointer rotate-12"
+          />
+        </div>
       </div>
       <div className="line4 h-[5px] w-full relative overflow-hidden">
         <img
@@ -130,7 +126,7 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
         />
       </div>
       <div className="line4 h-[5px] w-full relative z-50">
-        <Pin props="top-[80%] left-[85%] invisible xl:visible" />
+        <Pin props="top-[80%] left-[75%] invisible xl:visible" />
       </div>
       <div className="comicToButtonThread relative">
         <div className="absolute top-0 w-1/2 h-full  -right-[12%]">
@@ -142,8 +138,8 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
             />
           </div>
           <div className="h-[5px] w-full absolute top-[20%] z-50">
-            <Pin props="top-[90%] -right-[2%]" />
-            <Pin props="top-[0%] left-[42%]" />
+            <Pin props="top-[90%] -left-[10%]" />
+            <Pin props="top-[0%] left-[52%]" />
           </div>
         </div>
         <div className="absolute top-0 w-full h-full -left-[37%]">
@@ -156,7 +152,7 @@ const Contents: React.FC<functionPropString> = ({ func }) => {
           </div>
           <div className="h-[5px] w-full  absolute top-[20%] z-50">
             <Pin props="top-[90%] right-[45%]" />
-            <Pin props="top-[50%] left-[0%]" />
+            <Pin props="top-[50%] left-[13%]" />
           </div>
         </div>
       </div>

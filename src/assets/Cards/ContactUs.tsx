@@ -70,24 +70,9 @@ const ContactUs = () => {
             alt="youtube-icon"
             className="w-[70%] h-full absolute left-1/2 -translate-x-[55%]"
           />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-7 h-7">
-            <img
-              src={yellowpin}
-              alt="send"
-              className="w-full h-full object-contain"
-            />
-          </div>
         </div>
       </div>
-      <div className="instagramIcon flex items-start justify-center">
-        <div className="w-1/2 h-full relative">
-          <img
-            src={holder}
-            alt="border"
-            className="w-full h-full object-fill absolute"
-          />
-        </div>
-      </div>
+
       <div className="iconToEmailBox relative -z-10">
         <div className="iconToEmailBoxRope absolute w-full h-[5px]">
           <img

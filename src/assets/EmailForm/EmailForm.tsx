@@ -13,17 +13,21 @@ const EmailForm = () => {
 
   const sendEmail = () => {
     if (!email || !message) return;
-    fetch("https://formsubmit.co/ajax/shivamrawat06994@gmail.com", {
+    console.log(`https://formsubmit.co/ajax/${import.meta.env.VITE_EMAIL}`);
+    fetch(`https://formsubmit.co/ajax/${import.meta.env.VITE_EMAIL}`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       body: JSON.stringify({
-        data: {
-          email,
-          message,
-        },
+        email,
+        message,
       }),
     })
-      .then((res) => console.log(res))
+      .then((res) => {
+        setEmail("");
+      })
       .catch((err) => console.log(err));
   };
 

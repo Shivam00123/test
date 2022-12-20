@@ -12,6 +12,7 @@ import Comic from "../Cards/Comic";
 import Mail from "../Cards/Mail";
 import Meet from "../Cards/Meet";
 import ContactUs from "../Cards/ContactUs";
+import ComicPages from "../ComicPages/ComicPages";
 
 const CardsWrapper = () => {
   const displayingComponentState = useHookstate(useDisplayingComponent());

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback, memo } from "react";
-import video from "@/public/videos/dummy.mp4";
+import video from "@/public/videos/Trailer/trailer.mp4";
 import playbutton from "@/public/Images/videocontrols/play.png";
 import { useHookstate } from "@hookstate/core";
 import { useDisplayingComponent } from "@/globalStates/states";
@@ -35,19 +35,21 @@ const Trailer: React.FC<Props> = ({ pauseVideo }) => {
   };
 
   return (
-    <div className="w-[110%] h-[110%] -translate-y-[7%] -translate-x-[6%] relative rounded-md z-50">
-      <div className="absolute w-full h-full">
-        <img
-          src={VideoHolderBG}
-          alt="border"
-          className="w-full h-full object-fill absolute top-0"
-        />
-        {/* <img
+    <div className="w-[106%] h-[111%] -translate-y-1/2 absolute top-1/2  left-1/2 -translate-x-1/2 rounded-md z-50">
+      {dispayingCompState?.value !== "video" && (
+        <div className="absolute w-full h-full">
+          <img
+            src={VideoHolderBG}
+            alt="border"
+            className="w-full h-full object-fill absolute top-0"
+          />
+          {/* <img
           src={VideoHolder}
           alt="border"
           className="w-full h-full object-cover absolute top-0"
         /> */}
-      </div>
+        </div>
+      )}
       <div className="w-[95%] h-[91%] absolute top-[4%] left-1/2 -translate-x-1/2">
         <video
           ref={videoRef}

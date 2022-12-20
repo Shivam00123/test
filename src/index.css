@@ -30,8 +30,8 @@ video::-webkit-media-controls-play-button {
   display: none;
 } */
 .blog {
-  grid-column: col1-start / col2-start;
-  grid-row: row1-start / row4-start;
+  grid-column: col1-start / col3-start;
+  grid-row: row1-start / row3-start;
 }
 .mail {
   grid-column: col5-start;
@@ -44,7 +44,7 @@ video::-webkit-media-controls-play-button {
 }
 .comic {
   grid-column: col4-start / col5-end;
-  grid-row: row5-start;
+  grid-row: row4-start / row5-end;
 }
 .blogcomic {
   grid-column: col4-start / col5-end;
@@ -64,7 +64,7 @@ video::-webkit-media-controls-play-button {
   grid-row: row4-start / row5-end;
 }
 .trailervideo {
-  grid-column: col3-start / col3-start;
+  grid-column: col3-start / col4-start;
   grid-row: row3-start / row4-start;
 }
 .line1 {
@@ -110,7 +110,7 @@ video::-webkit-media-controls-play-button {
 }
 
 .comicToButtonThread {
-  grid-column: col3-start / col4-start;
+  grid-column: col3-start / col5-start;
   grid-row: row5-start / row6-start;
   /* background-color: red; */
 }
@@ -414,11 +414,11 @@ video::-webkit-media-controls-play-button {
 
 .twitterIcon {
   grid-column: col7-start/col9-start;
-  grid-row: row6-start/row7-start;
+  grid-row: row8-start/row10-start;
 }
 .instagramIcon {
   grid-column: col7-start/col9-start;
-  grid-row: row8-start/row10-start;
+  grid-row: row6-start/row7-start;
 }
 .titleToIcon {
   grid-column: col3-start/col8-start;
@@ -451,15 +451,15 @@ video::-webkit-media-controls-play-button {
   grid-row: row3-start/row4-end;
 }
 .comicCard:first-child {
-  transform: rotate(-4deg) translateX(-3%);
+  transform: rotate(-4deg) translateX(3%);
   z-index: 50;
 }
 .comicCard:nth-child(2) {
-  transform: rotate(-1deg) translate(-3%, -10%);
+  transform: rotate(-1deg) translate(3%, -10%);
   z-index: 40;
 }
 .comicCard:nth-child(3) {
-  transform: rotate(5deg) translateX(-3%);
+  transform: rotate(5deg) translateX(3%);
   z-index: 30;
 }
 .titleToComicOneCard {
@@ -480,4 +480,18 @@ video::-webkit-media-controls-play-button {
   transform: rotate(15deg);
   top: 5%;
   transform-origin: left;
+}
+.comicfirstpage {
+  grid-column: col1-start/col4-start;
+  grid-row: row2-start/row3-start;
+  z-index: 20;
+}
+.comiccenterpage {
+  grid-column: col3-start/col6-start;
+  grid-row: row1-start/row3-start;
+  z-index: 10;
+}
+.comicthirdpage {
+  grid-column: col5-start / col7-end;
+  grid-row: row2-start/row3-start;
 }
