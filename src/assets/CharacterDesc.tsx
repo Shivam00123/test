@@ -10,7 +10,7 @@ const CharacterDesc: React.FC<characterInfo> = ({
   charactername,
 }) => {
   return (
-    <div className="w-full h-full flex flex-col items-start justify-center text-left pb-5 px-3 space-y-2">
+    <div className="w-full h-full flex flex-col items-start justify-center text-left pb-5 px-5 space-y-2">
       <h1 className="text-xl font-bold">{charactername}</h1>
       <pre>
         <p className="text-base whitespace-pre-line font-bold">

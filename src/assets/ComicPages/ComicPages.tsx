@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState, useRef } from "react";
+import { motion } from "framer-motion";
+
 import BackButton from "../BackButton/BackButton";
 import comicpageback from "@/public/Images/Comic/comicpageback.png";
+import { objectType } from "@/Interface/object";
+import useGenerateIndex from "@/hooks/use-generateIndex";
 
-const ComicPage = () => {
+interface ComicPageProps {
+  card?: objectType;
+}
+
+const ComicPage: React.FC<ComicPageProps> = ({ card }) => {
+  console.log({ card });
   return (
     <div className="w-full h-full relative mt-5">
       <div className="w-full h-full absolute top-0">
@@ -12,14 +21,35 @@ const ComicPage = () => {
           className="w-full h-full object-fill"
         />
       </div>
-      <div className="absolute top-[5%] right-[5%] left-[5%] w-[87%] h-[85%] border-4 border-black"></div>
+      <div className="absolute top-[5%] right-[5%] left-[5%] w-[87%] h-[85%] border-4 border-black">
+        <img
+          src={card?.page}
+          alt="comicpage"
+          className="w-full h-full object-fill"
+        />
+      </div>
     </div>
   );
 };
 
-const ComicPages = () => {
+interface Props {
+  setOpenComic: (set: boolean) => void;
+  data?: objectType;
+}
+
+const ComicPages: React.FC<Props> = ({ setOpenComic, data }) => {
+  const IndexRef = useRef(useGenerateIndex(3));
+  console.log({ useClickedId: data });
+  const backToCollection = (set: boolean) => {
+    setOpenComic(set);
+  };
+
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      exit={{ opacity: 0 }}
       style={{
         gridTemplateColumns:
           "[col1-start] 10% [col2-start] 12% [col3-start] 3% [col4-start] 50% [col5-start] 3% [col6-start] 12% [col7-start] 10% [col7-end]",
@@ -29,22 +59,18 @@ const ComicPages = () => {
       className="w-full h-full grid place-content-center"
     >
       <div className="backbutton relative">
-        <BackButton />
+        <BackButton OnclickFunc={backToCollection} action={false} />
       </div>
-      <div className="comicfirstpage flex items-center justify-end">
-        <div className="w-[90%] h-2/3 relative -rotate-3">
-          <ComicPage />
+      {data?.pages?.map((card: any) => (
+        <div
+          className={`comicpage${IndexRef.current.generateCardIndex()}in flex items-center justify-end`}
+        >
+          <div className="comicpagechild relative">
+            <ComicPage card={card} />
+          </div>
         </div>
-      </div>
-      <div className="comiccenterpage flex items-center justify-start ">
-        <ComicPage />
-      </div>
-      <div className="comicthirdpage flex items-center justify-start relative">
-        <div className="w-[90%] h-2/3 relative rotate-6">
-          <ComicPage />
-        </div>
-      </div>
-    </div>
+      ))}
+    </motion.div>
   );
 };
 

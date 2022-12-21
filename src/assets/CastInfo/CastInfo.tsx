@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import BackButton from "../BackButton/BackButton";
 import Title from "../Title/Title";
 import horizontalRope from "@/public/Images/ropehorizontal.png";
-import VideoHolderBG from "@/public/Images/boardElements/VideoHolderBG.png";
+import descBackMeet from "@/public/Images/for website/Meet the cast page 2/descBackMeet.png";
 import Cards from "../MeetTheCast/assets/Cards";
 import CharcterDetails from "./CharcterDetails";
 import CharacterDesc from "../CharacterDesc";
@@ -70,12 +70,12 @@ const CastInfo = () => {
         <div className="w-[80%] h-full relative">
           <div className="w-full h-full absolute top-0 ">
             <img
-              src={VideoHolderBG}
+              src={descBackMeet}
               alt="border"
               className="w-full h-full object-fill"
             />
           </div>
-          <div className="w-full h-[74%] absolute bottom-0 pl-3 mb-3">
+          <div className="w-[90%] h-[64%] absolute bottom-[7%] left-1/2 -translate-x-1/2">
             <CharacterDesc
               charactername={useClickedId?.value?.name}
               characterdesc={useClickedId?.value?.desc}

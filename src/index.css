@@ -296,14 +296,14 @@ video::-webkit-media-controls-play-button {
 /* meet the cast */
 .descCard {
   grid-column: col5-start/col7-end;
-  grid-row: row2-start/row3-start;
+  grid-row: row1-start/row3-start;
 }
 .titleTodescCard {
   grid-column: col4-start/col6-start;
   grid-row: row1-start/row3-start;
 }
 .titleTodescCardRope {
-  transform: rotate(10deg);
+  transform: rotate(3deg);
   top: 5%;
 
   transform-origin: left;
@@ -317,8 +317,8 @@ video::-webkit-media-controls-play-button {
   grid-row: row2-start/row3-start;
 }
 .descCardtoinfocardRope {
-  transform: rotate(-5deg);
-  top: 10%;
+  transform: rotate(-6deg);
+  top: 0%;
   transform-origin: right top;
 }
 .cardContainer {
@@ -481,17 +481,33 @@ video::-webkit-media-controls-play-button {
   top: 5%;
   transform-origin: left;
 }
-.comicfirstpage {
+.comicpage1in {
   grid-column: col1-start/col4-start;
   grid-row: row2-start/row3-start;
   z-index: 20;
 }
-.comiccenterpage {
+.comicpage1in .comicpagechild {
+  width: 90%;
+  height: 66%;
+  transform: rotate(-6deg);
+}
+
+.comicpage2in {
   grid-column: col3-start/col6-start;
-  grid-row: row1-start/row3-start;
+  grid-row: row1-start/row3-end;
   z-index: 10;
 }
-.comicthirdpage {
+.comicpage2in .comicpagechild {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-2deg);
+}
+.comicpage3in {
   grid-column: col5-start / col7-end;
   grid-row: row2-start/row3-start;
+}
+.comicpage3in .comicpagechild {
+  width: 90%;
+  height: 66%;
+  transform: rotate(6deg);
 }

@@ -1,3 +1,4 @@
+import React from "react";
 import { memo, useState, useEffect } from "react";
 import { useHookstate } from "@hookstate/core";
 import { motion } from "framer-motion";
@@ -6,7 +7,6 @@ import {
   useContentStartingText,
   useDisplayingComponent,
 } from "@/globalStates/states";
-import React from "react";
 import Blog from "../Cards/Blog";
 import Comic from "../Cards/Comic";
 import Mail from "../Cards/Mail";

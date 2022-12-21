@@ -7,13 +7,22 @@ import holder from "@/public/Images/holder.png";
 import VideoHolderBG from "@/public/Images/boardElements/VideoHolderBG.png";
 import useGetCharcterInfo from "@/hooks/use-getCharcter-info";
 
-const BackButton = () => {
+interface Onclickprops {
+  OnclickFunc?: (action: any) => void;
+  action?: string | boolean;
+}
+
+const BackButton: React.FC<Onclickprops> = ({ OnclickFunc, action }) => {
   const dispayingCompState = useHookstate(useDisplayingComponent());
   const { resetState } = useGetCharcterInfo([]);
 
   const Onclick = () => {
-    dispayingCompState.set("");
-    resetState();
+    if (OnclickFunc) {
+      OnclickFunc(action);
+    } else {
+      dispayingCompState.set("");
+      resetState();
+    }
   };
 
   return (

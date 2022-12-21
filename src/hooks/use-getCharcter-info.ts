@@ -18,7 +18,6 @@ const useGetCharcterInfo = (
 
   useMemo(() => {
     let picked = useCastInfoArray.value.length ? useCastInfoArray.value : cast;
-    console.log({ picked });
     let array = picked.slice(startPoint, startPoint + maxDisplayingCards);
     if (array.length >= maxDisplayingCards) {
       setDisplayingCards(array);
@@ -79,6 +78,12 @@ const useGetCharcterInfo = (
     filterCastArray(id);
   };
 
+  const getClickedItem = (id: string | number) => {
+    let clickedItem = searchCastById(id.toString());
+    if (!clickedItem) return;
+    clickedId.set(clickedItem);
+  };
+
   const resetState = () => {
     filteredcastInfoArray.set(cast);
   };
@@ -91,6 +96,7 @@ const useGetCharcterInfo = (
     getCharacterInfo,
     changeDisplayingCards,
     displayingCards,
+    getClickedItem,
     resetState,
   };
 };

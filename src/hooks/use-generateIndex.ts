@@ -5,7 +5,6 @@ const useGenerateIndex = (maxIndex: number) => {
 
   const generateCardIndex = () => {
     classindex += 1;
-    console.log({ classindex });
     if (classindex > maxIndex) {
       classindex = 1;
       return classindex;
@@ -15,7 +14,6 @@ const useGenerateIndex = (maxIndex: number) => {
 
   const resetIndex = () => {
     classindex = 0;
-    return;
   };
 
   return {

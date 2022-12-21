@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import VideoHolderBG from "@/public/Images/boardElements/VideoHolderBG.png";
+import morevidholder from "@/public/Images/for website/blogstuff/morevidholder.png";
 import { objectType } from "@/Interface/object";
 import useGenerateIndex from "@/hooks/use-generateIndex";
 import ColoredPins from "../ColoredPins/ColoredPins";
@@ -35,7 +35,7 @@ const Cards: React.FC<Cardsprops> = ({ item, changeCard, pinIndex }) => {
       </div>
       <div className="absolute top-0 w-full h-full">
         <img
-          src={VideoHolderBG}
+          src={morevidholder}
           alt="border"
           className="w-full h-full object-fill"
         />

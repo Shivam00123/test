@@ -6,7 +6,7 @@ interface VideoProps {
 
 const VideoComponent: React.FC<VideoProps> = ({ videoUrl }) => {
   return (
-    <div className="w-[95%] h-[91%] absolute top-auto">
+    <div className="w-[94%] -translate-x-[0.8%] -translate-y-[1%] h-[92%] absolute  top-auto">
       <video
         src={videoUrl}
         controls
