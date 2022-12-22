@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useHookstate } from "@hookstate/core";
+
+import titleback from "@/public/Images/homepage/titleback.png";
+import title from "@/public/Images/homepage/title.png";
 import {
   setContentStartingText,
   useDisplayingComponent,
 } from "@/globalStates/states";
 import { objectType } from "@/Interface/object";
-import CardsWrapper from "../CardsWrapper/CardsWrapper";
+import { useHookstate } from "@hookstate/core";
 import Trailer from "../Trailer/Trailer";
-import BackButton from "../BackButton/BackButton";
-import Contents from "../HomeContents/Contents";
-import Title from "../Title/Title";
-import titleImg from "@/public/Images/for website/homepage - web/title.png";
-import Content2 from "../HomeContents/Content2";
+import CardsWrapper from "../CardsWrapper/CardsWrapper";
+import Content from "../HomeContents/Content";
 
 const GridLayout = () => {
   const [showCards, setShowCards] = useState<boolean>(false);
@@ -48,25 +47,25 @@ const GridLayout = () => {
       transform: "scale(1)",
       opacity: opacityNumber,
       gridTemplateColumns:
-        "[col1-start] 0% [col2-start] 0% [col3-start] 35% [col4-start] 0% [col5-start] 0% [col5-end]",
+        "[col1-start] 0% [col2-start] 0% [col3-start] 0% [col4-start] 0% [col5-start] 0% [col6-start] 0% [col7-start] 18%[col8-start] 18% [col9-start] 0% [col10-start] 0% [col11-start] 0% [col12-start] 0% [col13-start] 0% [col14-start] 0%[col14-end]",
       gridTemplateRows:
-        "[row1-start] 0% [row2-start] 0% [row3-start] 35% [row4-start] 0% [row5-start] 0% [row5-end]",
+        "[row1-start] 0% [row2-start] 0% [row3-start] 0% [row4-start] 21% [row5-start] 21% [row6-start] 0% [row7-start] 0%[row8-start] 0% [row9-start] 0% [row9-end]",
     },
     after: {
       transform: "scale(1)",
       opacity: opacityNumber,
       gridTemplateColumns:
-        "[col1-start] 16% [col2-start] 16% [col3-start] 35% [col4-start] 16% [col5-start] 16% [col5-end]",
+        "[col1-start] 8% [col2-start] 2% [col3-start] 8% [col4-start] 2% [col5-start] 2% [col6-start] 10% [col7-start] 18%[col8-start] 18% [col9-start] 7% [col10-start] 5% [col11-start] 5% [col12-start] 5% [col13-start] 5% [col14-start] 5%[col14-end]",
       gridTemplateRows:
-        "[row1-start] 16% [row2-start] 16% [row3-start] 35% [row4-start] 16% [row5-start] 16% [row5-end]",
+        "[row1-start] 7% [row2-start] 12% [row3-start] 10% [row4-start] 21% [row5-start] 21% [row6-start] 9% [row7-start] 10%[row8-start] 5% [row9-start] 5% [row9-end]",
     },
     expandfull: {
       transform: "scale(1)",
       opacity: opacityNumber,
       gridTemplateColumns:
-        "[col1-start] 0% [col2-start] 0% [col3-start] 100% [col4-start] 0% [col5-start] 0% [col5-end]",
+        "[col1-start] 0% [col2-start] 0% [col3-start] 0% [col4-start] 0% [col5-start] 0% [col6-start] 0% [col7-start] 50%[col8-start] 50% [col9-start] 0% [col10-start] 0% [col11-start] 0% [col12-start] 0% [col13-start] 0% [col14-start] 0%[col14-end]",
       gridTemplateRows:
-        "[row1-start] 0% [row2-start] 0% [row3-start] 100% [row4-start] 0% [row5-start] 0% [row5-end]",
+        "[row1-start] 0% [row2-start] 0% [row3-start] 0% [row4-start] 50% [row5-start] 50% [row6-start] 0% [row7-start] 0%[row8-start] 0% [row9-start] 0% [row9-end]",
     },
   };
 
@@ -79,11 +78,10 @@ const GridLayout = () => {
   return (
     <motion.div
       initial={{
-        transform: "scale(0)",
         gridTemplateColumns:
-          "[col1-start] 0% [col2-start] 0% [col3-start] 35% [col4-start] 0% [col5-start] 0% [col5-end]",
+          "[col1-start] 0% [col2-start] 0% [col3-start] 0% [col4-start] 0% [col5-start] 0% [col6-start] 0% [col7-start] 18%[col8-start] 18% [col9-start] 0% [col10-start] 0% [col11-start] 0% [col12-start] 0% [col13-start] 0% [col14-start] 0%[col14-end]",
         gridTemplateRows:
-          "[row1-start] 0% [row2-start] 0% [row3-start] 35% [row4-start] 0% [row5-start] 0% [row5-end]",
+          "[row1-start] 0% [row2-start] 0% [row3-start] 0% [row4-start] 21% [row5-start] 21% [row6-start] 0% [row7-start] 0%[row8-start] 0% [row9-start] 0% [row9-end]",
       }}
       variants={variants}
       animate={
@@ -93,30 +91,33 @@ const GridLayout = () => {
           ? "after"
           : "before"
       }
-      transition={{ duration: 2, type: "spring", stiffness: 100 }}
-      className="w-full h-full grid  place-content-center"
+      transition={{ duration: 3, type: "spring", stiffness: 100 }}
+      className="w-full h-full grid place-content-center"
     >
-      {!dispayingCompState?.value && (
-        <div className="absolute top-5 w-[30%] h-[15%] left-1/2 -translate-x-1/2">
-          <img
-            src={titleImg}
-            alt="title"
-            className="w-full h-full object-contain"
-          />
+      <div className="gridtitleBox relative">
+        <div className="w-full h-[70%] relative flex items-center justify-center">
+          <div className="absolute top-0 w-full h-full">
+            <img
+              src={titleback}
+              alt="auto"
+              className="w-full h-full object-fill"
+            />
+          </div>
+          <div className="w-[80%] h-[80%] absolute top-0 left-1/2 -translate-x-1/2">
+            <img src={title} alt="auto" className="w-full h-full object-fill" />
+          </div>
         </div>
-      )}
-      <motion.div className="trailervideo relative">
+      </div>
+      <motion.div className="trailervideoContainer relative">
         {!dispayingCompState?.value || dispayingCompState?.value == "video" ? (
           <Trailer />
         ) : (
           <CardsWrapper />
         )}
       </motion.div>
-
-      {showCards && <Content2 />}
+      {showCards && <Content func={switchComponentTo} />}
     </motion.div>
   );
 };
 
 export default GridLayout;
-// func={switchComponentTo}

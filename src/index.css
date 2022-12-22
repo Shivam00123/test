@@ -518,53 +518,163 @@ video::-webkit-media-controls-play-button {
 
 /* -------------------------------------------------------------------------- */
 
+.gridtitleBox {
+  grid-column: col7-start / col9-start;
+  grid-row: row1-start/row4-start;
+}
+
 .trailervideoContainer {
   grid-column: col7-start / col9-start;
   grid-row: row4-start/row6-start;
-  background-color: red;
+}
+.titletotrailer {
+  grid-column: col7-start / col8-start;
+  grid-row: row2-start/row5-start;
+  overflow: hidden;
+}
+.titletotrailerrope {
+  transform: rotate(60deg);
+  top: 0%;
+  left: 40%;
+  transform-origin: left;
 }
 .ricksaw {
   grid-column: col1-start / col3-start;
   grid-row: row1-start/row3-start;
-  background-color: red;
+}
+.autoToblog {
+  grid-column: col2-start / col4-start;
+  grid-row: row2-start/row5-start;
+  /* overflow: hidden; */
+}
+.autoToblogrope {
+  transform: rotate(50deg);
+  top: 10%;
+  transform-origin: left;
 }
 .gridblog {
   grid-column: col1-start / col5-start;
   grid-row: row4-start/row6-start;
-  background-color: red;
+}
+.blogtocontactus {
+  grid-column: col3-start / col5-start;
+  grid-row: row5-start/row8-start;
+  overflow: hidden;
+}
+.blogtocontactusrope {
+  transform: rotate(70deg);
+  top: 0%;
+  transform-origin: left;
+}
+.blogtovideo {
+  grid-column: col4-start / col8-start;
+  grid-row: row4-start/row5-start;
+  overflow: hidden;
+}
+.blogtovideorope {
+  transform: rotate(13deg);
+  top: 10%;
+  transform-origin: left;
 }
 .gridcontactus {
   grid-column: col3-start / col6-start;
-  grid-row: row6-start/row8-start;
-  background-color: red;
+  grid-row: row6-start/row9-end;
+}
+.missingtocontactus {
+  grid-column: col1-start / col4-start;
+  grid-row: row7-start/row9-end;
+  overflow: hidden;
+}
+.missingtocontactusrope {
+  transform: rotate(-15deg);
+  left: -10%;
+  transform-origin: right;
+}
+.contactustovideo {
+  grid-column: col4-start / col8-start;
+  grid-row: row5-start/row8-start;
+  /* background-color: green;
+  z-index: 100; */
+  overflow: hidden;
+}
+.contactustovideorope {
+  transform: rotate(-20deg);
+  top: 70%;
+  transform-origin: left;
 }
 .missing {
   grid-column: col1-start / col3-start;
   grid-row: row8-start/row9-end;
-  background-color: red;
 }
+.codepapertovideo {
+  grid-column: col6-start / col8-start;
+  grid-row: row2-start/row5-start;
+}
+.codepapertovideorope {
+  transform: rotate(30deg);
+  top: 0%;
+  transform-origin: left;
+}
+.codepapertomeet {
+  grid-column: col12-start / col14-start;
+  grid-row: row2-start/row5-start;
+}
+.codepapertomeetrope {
+  transform: rotate(-55deg);
+  top: 15%;
+  right: -15%;
+  transform-origin: right;
+}
+.meettovideo {
+  grid-column: col8-start / col13-start;
+  grid-row: row5-start/row6-start;
+  overflow: hidden;
+}
+.meettovideorope {
+  transform: rotate(5deg);
+  top: 0%;
+  transform-origin: left;
+}
+
 .codepaper {
-  grid-column: col4-start / col6-start;
+  grid-column: col5-start / col7-start;
   grid-row: row1-start/row3-start;
-  background-color: red;
 }
 .followus {
   grid-column: col10-start / col12-start;
   grid-row: row1-start/row3-start;
-  background-color: red;
+}
+.videotocodepaper {
+  grid-column: col8-start / col14-start;
+  grid-row: row2-start/row5-start;
+}
+.videotocodepaperrope {
+  transform: rotate(-20deg);
+  top: 0%;
+  transform-origin: right;
 }
 .rightcodepaper {
   grid-column: col13-start / col14-end;
   grid-row: row1-start/row3-start;
-  background-color: red;
 }
 .gridmeetthecast {
   grid-column: col11-start / col14-start;
   grid-row: row4-start/row6-start;
-  background-color: red;
+}
+.videotocomic {
+  grid-column: col8-start / col12-start;
+  grid-row: row5-start/row8-start;
+}
+.videotocomicrope {
+  transform: rotate(27deg);
+  top: 0%;
+  transform-origin: left;
 }
 .gridcomic {
   grid-column: col10-start / col13-start;
   grid-row: row6-start/row9-end;
-  background-color: red;
+}
+.bottomrightpic {
+  grid-column: col13-start / col14-end;
+  grid-row: row6-start/row9-end;
 }

@@ -1,9 +1,8 @@
-import GridLayout from "@/assets/Grid/GridLayout";
 import MeetTheCast from "@/assets/MeetTheCast/MeetTheCast";
 import { useHookstate } from "@hookstate/core";
 import React from "react";
 import boardImg from "@/public/Images/board.png";
-import GridLayout2 from "@/assets/Grid/GridLayout2";
+import GridLayout from "@/assets/Grid/GridLayout";
 
 const Home = () => {
   return (
@@ -13,7 +12,7 @@ const Home = () => {
         alt="board"
         className="w-full h-full object-cover absolute top-0 -z-50"
       />
-      <GridLayout2 />
+      <GridLayout />
       {/* <MeetTheCast /> */}
     </div>
   );
