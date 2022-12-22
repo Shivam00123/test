@@ -20,7 +20,7 @@ const ContactUs = () => {
       <div className="backbutton relative">
         <BackButton />
       </div>
-      <div className="titleBox relative p-2">
+      <div className="titleBoxcontactus relative p-2">
         <Title title="Contact Us" />
       </div>
       <div className="titleToIcon relative -z-10">

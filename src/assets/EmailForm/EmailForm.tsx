@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import sendbutton from "@/public/Images/send.png";
 import whiteback from "@/public/Images/whiteback.svg";
 import VideoHolderBG from "@/public/Images/boardElements/VideoHolderBG.png";
+import messageback from "@/public/Images/for website/contact us/messageback.png";
 import holder from "@/public/Images/holder.png";
 import yellowpin from "@/public/Images/MeetThecast/yellowpin.png";
 import purplepin from "@/public/Images/MeetThecast/purplepin.png";
@@ -13,7 +14,6 @@ const EmailForm = () => {
 
   const sendEmail = () => {
     if (!email || !message) return;
-    console.log(`https://formsubmit.co/ajax/${import.meta.env.VITE_EMAIL}`);
     fetch(`https://formsubmit.co/ajax/${import.meta.env.VITE_EMAIL}`, {
       method: "POST",
       headers: {
@@ -36,13 +36,13 @@ const EmailForm = () => {
       <div className="messageBox relative flex items-center justify-center">
         <div className="w-full h-full absolute top-5 rotate-1 flex items-center justify-center">
           <img
-            src={VideoHolderBG}
+            src={messageback}
             alt="border"
             className="w-full h-full object-fill"
           />
           <div className="w-[95%] h-[91%] absolute top-auto">
             <textarea
-              className="w-full h-full p-5 text-base"
+              className="w-[90%] h-[94%] translate-x-[3%] translate-y-[3%] p-5 text-base bg-transparent "
               placeholder="message"
               style={{ resize: "none" }}
               onChange={(e) => setMessage(e.target.value)}

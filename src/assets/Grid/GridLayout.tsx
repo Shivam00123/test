@@ -12,6 +12,7 @@ import BackButton from "../BackButton/BackButton";
 import Contents from "../HomeContents/Contents";
 import Title from "../Title/Title";
 import titleImg from "@/public/Images/for website/homepage - web/title.png";
+import Content2 from "../HomeContents/Content2";
 
 const GridLayout = () => {
   const [showCards, setShowCards] = useState<boolean>(false);
@@ -112,9 +113,10 @@ const GridLayout = () => {
         )}
       </motion.div>
 
-      {showCards && <Contents func={switchComponentTo} />}
+      {showCards && <Content2 />}
     </motion.div>
   );
 };
 
 export default GridLayout;
+// func={switchComponentTo}
