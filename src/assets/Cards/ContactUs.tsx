@@ -45,7 +45,7 @@ const ContactUs = () => {
       </div>
       <EmailForm />
       <div className="youtubeIcon flex items-start justify-center">
-        <div className="w-1/2 h-full relative">
+        <div className="w-[77%] h-[140%] relative">
           <img
             src={holder}
             alt="border"
@@ -59,7 +59,7 @@ const ContactUs = () => {
         </div>
       </div>
       <div className="twitterIcon flex items-start justify-center">
-        <div className="w-1/2 h-full relative">
+        <div className="w-[77%] h-[140%] relative">
           <img
             src={holder}
             alt="border"

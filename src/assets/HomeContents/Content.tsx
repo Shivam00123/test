@@ -17,6 +17,7 @@ import horizontalRope from "@/public/Images/ropehorizontal.png";
 import rope from "@/public/Images/rope.png";
 import codepaper from "@/public/Images/homepage/codepaper.png";
 import { functionPropString } from "@/Interface/function";
+import HomepageTitleBar from "../HomepageTitleBar/HomepageTitleBar";
 
 const Content: React.FC<functionPropString> = ({ func }) => {
   return (
@@ -45,12 +46,16 @@ const Content: React.FC<functionPropString> = ({ func }) => {
         </div>
       </div>
       <div className="gridblog relative">
-        <div className="w-[110%] h-[100%] absolute -right-[15%] -top-[14%] -rotate-12 flex items-start justify-start">
+        <div className="w-[110%] h-[100%] absolute -right-[20%] -top-[16%] -rotate-12 flex items-start justify-start">
           <img
             onClick={() => func("blog")}
             src={blog}
             alt="auto"
             className="w-full h-full object-contain cursor-pointer"
+          />
+          <HomepageTitleBar
+            title="Behind the Scenes"
+            classname="w-[95%] h-[15%] left-1/2 -translate-x-[52%] top-[6%]"
           />
         </div>
       </div>
@@ -73,12 +78,16 @@ const Content: React.FC<functionPropString> = ({ func }) => {
         </div>
       </div>
       <div className="gridcontactus relative">
-        <div className="w-[90%] h-full absolute right-0 flex items-start justify-start">
+        <div className="w-[115%] h-[115%] bottom-[5%] absolute -right-[5%] flex items-start justify-start">
           <img
             onClick={() => func("contactus")}
             src={contactus}
             alt="auto"
             className="w-full h-full object-contain cursor-pointer"
+          />
+          <HomepageTitleBar
+            title="Contact Us"
+            classname="w-[90%] h-[15%] left-1/2 -translate-x-[64%] -top-[10%]"
           />
         </div>
       </div>
@@ -101,7 +110,7 @@ const Content: React.FC<functionPropString> = ({ func }) => {
         </div>
       </div>
       <div className="missing relative">
-        <div className="w-[120%] h-[120%] absolute -bottom-[20%] -left-[5%] rotate-[70deg] flex items-end justify-end">
+        <div className="w-[120%] h-[120%] absolute bottom-[5%] xl:-bottom-[20%] -left-[20%] xl:-left-[50%] rotate-[70deg] flex items-end justify-end">
           <img
             src={missing}
             alt="auto"
@@ -181,6 +190,10 @@ const Content: React.FC<functionPropString> = ({ func }) => {
             alt="auto"
             className="w-full h-full object-contain cursor-pointer"
           />
+          <HomepageTitleBar
+            title="Meet the Cast"
+            classname="w-full h-[15%] -left-[7%] -rotate-1"
+          />
         </div>
       </div>
       <div className="videotocomic relative -z-10">
@@ -193,17 +206,22 @@ const Content: React.FC<functionPropString> = ({ func }) => {
         </div>
       </div>
       <div className="gridcomic relative z-20 ">
-        <div className="w-[273px] h-[295px]  absolute -top-[50%] left-1/2 -translate-x-1/2 rotate-12  flex items-start justify-start">
+        <div className="w-[145%] h-[145%] absolute -top-[50%] left-1/2 -translate-x-1/2 rotate-12  flex items-start justify-start">
           <img
             onClick={() => func("comic")}
             src={comic}
             alt="auto"
             className="w-full h-full object-contain cursor-pointer "
           />
+          <HomepageTitleBar
+            borderColor="yellow"
+            title="Comics"
+            classname="w-[80%] h-[15%] left-1/2 -translate-x-1/2 -top-[10%]"
+          />
         </div>
       </div>
       <div className="bottomrightpic relative">
-        <div className="w-[150%] h-[150%] absolute -bottom-[50%] -right-[70%] -rotate-[70deg] flex items-end justify-end">
+        <div className="w-[120%] h-[120%] absolute -bottom-[20%] left-[40%] -rotate-[70deg] flex items-end justify-end">
           <img
             src={contract}
             alt="auto"
@@ -212,11 +230,11 @@ const Content: React.FC<functionPropString> = ({ func }) => {
         </div>
       </div>
       <div className="portrait relative z-10">
-        <div className="w-[90%] h-[160%] absolute top-[65%] left-0">
+        <div className="w-[110%] h-[100%] absolute top-[75%] left-0">
           <img
             src={portrait}
             alt="auto"
-            className="w-full h-full object-fill rotate-[20deg]"
+            className="w-full h-full object-fill rotate-[10deg]"
           />
         </div>
       </div>

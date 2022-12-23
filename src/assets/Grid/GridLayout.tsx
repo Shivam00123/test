@@ -94,8 +94,8 @@ const GridLayout = () => {
       transition={{ duration: 3, type: "spring", stiffness: 100 }}
       className="w-full h-full grid place-content-center"
     >
-      <div className="gridtitleBox relative">
-        <div className="w-full h-[70%] relative flex items-center justify-center">
+      <div className="gridtitleBox relative flex  justify-center">
+        <div className="w-[100%] h-[72%] relative flex items-center justify-center">
           <div className="absolute top-0 w-full h-full">
             <img
               src={titleback}

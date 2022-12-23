@@ -25,7 +25,7 @@ const Cards: React.FC<Cardsprops> = ({ item, changeCard, pinIndex }) => {
 
   return (
     <div
-      className="slides w-1/5 h-[80%] relative flex items-center justify-center cursor-pointer"
+      className="slides w-[19%] h-[85%] relative flex items-center justify-center cursor-pointer"
       onClick={() => changeCard(item?.id)}
     >
       <div

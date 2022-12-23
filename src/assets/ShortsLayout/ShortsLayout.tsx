@@ -55,7 +55,7 @@ const ShortsLayout: React.FC<ShortsProps> = ({
         </div>
       </div>
       <div className="videoContainer relative flex items-center justify-center">
-        <div className="w-[80%] h-[80%] flex items-center justify-center relative">
+        <div className="w-[70%] h-[90%] flex items-center justify-center relative">
           <img
             src={blogvideoholder}
             alt="border"
@@ -67,7 +67,7 @@ const ShortsLayout: React.FC<ShortsProps> = ({
         </div>
       </div>
       <div className="descContainer relative flex items-center justify-center">
-        <div className="w-full h-full relative">
+        <div className="w-[78%] h-[125%] relative">
           <img
             src={descBackMeet}
             alt="border"

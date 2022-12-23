@@ -65,7 +65,7 @@ const EmailForm = () => {
         </div>
       </div>
       <div className="emailBox relative">
-        <div className="w-full h-full absolute top-0 flex items-center justify-start">
+        <div className="w-[95%] h-full absolute top-0 flex items-center justify-start -rotate-1">
           <img
             src={VideoHolderBG}
             alt="border"

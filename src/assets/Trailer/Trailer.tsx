@@ -35,7 +35,7 @@ const Trailer: React.FC<Props> = ({ pauseVideo }) => {
   };
 
   return (
-    <div className="w-[106%] h-[111%] -translate-y-1/2 absolute top-1/2  left-1/2 -translate-x-1/2 rounded-md z-50">
+    <div className="w-full h-full -translate-y-1/2 absolute top-1/2  left-1/2 -translate-x-1/2 rounded-md z-50">
       {dispayingCompState?.value !== "video" && (
         <div className="absolute w-full h-full">
           <img

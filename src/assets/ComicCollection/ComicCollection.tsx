@@ -32,7 +32,7 @@ const ComicCard: React.FC<ComicCardProps> = ({ comic, openComic }) => {
   return (
     <div
       onClick={() => openComic(true, comic?.id)}
-      className="comicCard w-1/3 h-[97%] relative cursor-pointer"
+      className="comicCard w-[33%] h-[95%] relative cursor-pointer flex-shrink-0"
     >
       <div className="w-[84%] h-[65%] opacity-50 absolute z-50 left-1/2 -translate-x-1/2 top-[23%]">
         <img

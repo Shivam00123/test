@@ -67,7 +67,7 @@ const CastInfo = () => {
         </div>
       </div>
       <div className="descCard grid place-items-center">
-        <div className="w-[80%] h-full relative">
+        <div className="w-[591px] h-[445px] relative">
           <div className="w-full h-full absolute top-0 ">
             <img
               src={descBackMeet}
@@ -84,7 +84,7 @@ const CastInfo = () => {
         </div>
       </div>
       <div className="infocard grid place-items-center">
-        <div className="w-[85%] h-[95%] -rotate-6 relative z-20">
+        <div className="w-[110%] h-[86%] -rotate-6 relative z-20">
           <div className="w-full h-full absolute top-0 z-50">
             <img
               src={castcard}
@@ -122,7 +122,7 @@ const CastInfo = () => {
           </div>
         </div>
       </div>
-      <div className="cardContainer flex items-center justify-between pr-5 z-50 relative">
+      <div className="cardContainer flex items-center justify-between -translate-x-[10%] -translate-y-[7%] z-50 relative">
         {displayingCards.map((card, index) => (
           <>
             <div
