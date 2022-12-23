@@ -519,16 +519,16 @@ video::-webkit-media-controls-play-button {
 /* -------------------------------------------------------------------------- */
 
 .gridtitleBox {
-  grid-column: col7-start / col9-start;
+  grid-column: col7-start / col11-start;
   grid-row: row1-start/row4-start;
 }
 
 .trailervideoContainer {
-  grid-column: col7-start / col9-start;
+  grid-column: col7-start / col11-start;
   grid-row: row4-start/row6-start;
 }
 .titletotrailer {
-  grid-column: col7-start / col8-start;
+  grid-column: col7-start / col10-start;
   grid-row: row2-start/row5-start;
   overflow: hidden;
 }
@@ -616,7 +616,7 @@ video::-webkit-media-controls-play-button {
   transform-origin: left;
 }
 .codepapertomeet {
-  grid-column: col12-start / col14-start;
+  grid-column: col14-start / col16-start;
   grid-row: row2-start/row5-start;
 }
 .codepapertomeetrope {
@@ -626,7 +626,7 @@ video::-webkit-media-controls-play-button {
   transform-origin: right;
 }
 .meettovideo {
-  grid-column: col8-start / col13-start;
+  grid-column: col10-start / col15-start;
   grid-row: row5-start/row6-start;
   overflow: hidden;
 }
@@ -641,11 +641,11 @@ video::-webkit-media-controls-play-button {
   grid-row: row1-start/row3-start;
 }
 .followus {
-  grid-column: col10-start / col12-start;
+  grid-column: col12-start / col14-start;
   grid-row: row1-start/row3-start;
 }
 .videotocodepaper {
-  grid-column: col8-start / col14-start;
+  grid-column: col10-start / col16-start;
   grid-row: row2-start/row5-start;
 }
 .videotocodepaperrope {
@@ -654,27 +654,68 @@ video::-webkit-media-controls-play-button {
   transform-origin: right;
 }
 .rightcodepaper {
-  grid-column: col13-start / col14-end;
+  grid-column: col15-start / col16-end;
   grid-row: row1-start/row3-start;
 }
 .gridmeetthecast {
-  grid-column: col11-start / col14-start;
+  grid-column: col13-start / col16-start;
   grid-row: row4-start/row6-start;
 }
 .videotocomic {
-  grid-column: col8-start / col12-start;
+  grid-column: col10-start / col16-start;
   grid-row: row5-start/row8-start;
+  overflow: hidden;
 }
 .videotocomicrope {
-  transform: rotate(27deg);
+  transform: rotate(22deg);
   top: 0%;
   transform-origin: left;
 }
 .gridcomic {
-  grid-column: col10-start / col13-start;
+  grid-column: col12-start / col15-start;
   grid-row: row6-start/row9-end;
 }
 .bottomrightpic {
   grid-column: col13-start / col14-end;
   grid-row: row6-start/row9-end;
+}
+.portrait {
+  grid-column: col7-start / col9-start;
+  grid-row: row7-start/row9-end;
+}
+.playstore {
+  grid-column: col7-start / col9-start;
+  grid-row: row7-start/row8-start;
+}
+.appstore {
+  grid-column: col9-start / col11-start;
+  grid-row: row7-start/row8-start;
+}
+.contacttoplaystore {
+  grid-column: col4-start / col8-start;
+  grid-row: row7-start/row8-start;
+  overflow: hidden;
+}
+.contacttoplaystorerope {
+  transform: rotate(-9deg);
+  transform-origin: right;
+}
+.comictoappstore {
+  grid-column: col10-start / col13-start;
+  grid-row: row7-start/row8-start;
+  overflow: hidden;
+}
+.comictoappstorerope {
+  transform: rotate(13deg);
+  transform-origin: left;
+}
+.playstoretoappstore {
+  grid-column: col8-start / col10-start;
+  grid-row: row7-start/row8-start;
+  overflow: hidden;
+}
+.playstoretoappstorerope {
+  transform: rotate(0deg);
+  top: 50%;
+  transform-origin: left;
 }

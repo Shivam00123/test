@@ -47,7 +47,7 @@ const GridLayout = () => {
       transform: "scale(1)",
       opacity: opacityNumber,
       gridTemplateColumns:
-        "[col1-start] 0% [col2-start] 0% [col3-start] 0% [col4-start] 0% [col5-start] 0% [col6-start] 0% [col7-start] 18%[col8-start] 18% [col9-start] 0% [col10-start] 0% [col11-start] 0% [col12-start] 0% [col13-start] 0% [col14-start] 0%[col14-end]",
+        "[col1-start] 0% [col2-start] 0% [col3-start] 0% [col4-start] 0% [col5-start] 0% [col6-start] 0% [col7-start] 9% [col8-start] 9% [col9-start] 9% [col10-start] 9% [col11-start] 0% [col12-start] 0% [col13-start] 0% [col14-start] 0% [col15-start] 0%[col16-start] 0% [col16-end]",
       gridTemplateRows:
         "[row1-start] 0% [row2-start] 0% [row3-start] 0% [row4-start] 21% [row5-start] 21% [row6-start] 0% [row7-start] 0%[row8-start] 0% [row9-start] 0% [row9-end]",
     },
@@ -55,7 +55,7 @@ const GridLayout = () => {
       transform: "scale(1)",
       opacity: opacityNumber,
       gridTemplateColumns:
-        "[col1-start] 8% [col2-start] 2% [col3-start] 8% [col4-start] 2% [col5-start] 2% [col6-start] 10% [col7-start] 18%[col8-start] 18% [col9-start] 7% [col10-start] 5% [col11-start] 5% [col12-start] 5% [col13-start] 5% [col14-start] 5%[col14-end]",
+        "[col1-start] 5% [col2-start] 5% [col3-start] 8% [col4-start] 2% [col5-start] 2% [col6-start] 10% [col7-start] 9%[col8-start] 9% [col9-start] 9% [col10-start] 9% [col11-start] 7% [col12-start] 5% [col13-start] 5% [col14-start] 5% [col15-start] 5%[col16-start] 5% [col16-end]",
       gridTemplateRows:
         "[row1-start] 7% [row2-start] 12% [row3-start] 10% [row4-start] 21% [row5-start] 21% [row6-start] 9% [row7-start] 10%[row8-start] 5% [row9-start] 5% [row9-end]",
     },
@@ -63,7 +63,7 @@ const GridLayout = () => {
       transform: "scale(1)",
       opacity: opacityNumber,
       gridTemplateColumns:
-        "[col1-start] 0% [col2-start] 0% [col3-start] 0% [col4-start] 0% [col5-start] 0% [col6-start] 0% [col7-start] 50%[col8-start] 50% [col9-start] 0% [col10-start] 0% [col11-start] 0% [col12-start] 0% [col13-start] 0% [col14-start] 0%[col14-end]",
+        "[col1-start] 0% [col2-start] 0% [col3-start] 0% [col4-start] 0% [col5-start] 0% [col6-start] 0% [col7-start] 25% [col8-start] 25% [col9-start] 25% [col10-start] 25% [col11-start] 0% [col12-start] 0% [col13-start] 0% [col14-start] 0% [col15-start] 0%[col16-start] 0% [col16-end]",
       gridTemplateRows:
         "[row1-start] 0% [row2-start] 0% [row3-start] 0% [row4-start] 50% [row5-start] 50% [row6-start] 0% [row7-start] 0%[row8-start] 0% [row9-start] 0% [row9-end]",
     },
@@ -79,7 +79,7 @@ const GridLayout = () => {
     <motion.div
       initial={{
         gridTemplateColumns:
-          "[col1-start] 0% [col2-start] 0% [col3-start] 0% [col4-start] 0% [col5-start] 0% [col6-start] 0% [col7-start] 18%[col8-start] 18% [col9-start] 0% [col10-start] 0% [col11-start] 0% [col12-start] 0% [col13-start] 0% [col14-start] 0%[col14-end]",
+          "[col1-start] 0% [col2-start] 0% [col3-start] 0% [col4-start] 0% [col5-start] 0% [col6-start] 0% [col7-start] 0%[col8-start] 0% [col9-start]0% [col10-start] 0% [col11-start] 0% [col12-start]0% [col13-start] 0% [col14-start] 0%[col15-start] 0%[col16-start] 0% [col16-end]",
         gridTemplateRows:
           "[row1-start] 0% [row2-start] 0% [row3-start] 0% [row4-start] 21% [row5-start] 21% [row6-start] 0% [row7-start] 0%[row8-start] 0% [row9-start] 0% [row9-end]",
       }}
