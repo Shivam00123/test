@@ -110,7 +110,7 @@ const GridLayout = () => {
       </div>
       <motion.div className="trailervideoContainer relative">
         {!dispayingCompState?.value || dispayingCompState?.value == "video" ? (
-          <Trailer />
+          <Trailer expand={showCards} />
         ) : (
           <CardsWrapper />
         )}

@@ -85,7 +85,9 @@ const useGetCharcterInfo = (
   };
 
   const resetState = () => {
-    filteredcastInfoArray.set(cast);
+    clickedId.set({});
+    filteredcastInfoArray.set([]);
+    useClickedId.set({});
   };
 
   return {

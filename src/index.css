@@ -2,16 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+@font-face {
+  font-family: "Pixellari";
+  src: local("Pixallari"), url(Fonts/pixellari/Pixellari.ttf) format("opentype");
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: Pixellari, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+span,
+button {
+  font-family: Pixellari;
 }
 
 code {
@@ -450,6 +465,11 @@ video::-webkit-media-controls-play-button {
   grid-column: col5-start/col6-end;
   grid-row: row2-start/row3-start;
 }
+
+.leftcomicpages {
+  grid-column: col7-start/col8-end;
+  grid-row: row1-start/row2-start;
+}
 .comicPages {
   grid-column: col1-start/col6-start;
   grid-row: row3-start/row4-end;
@@ -497,23 +517,24 @@ video::-webkit-media-controls-play-button {
 }
 
 .comicpage2in {
+  grid-column: col5-start / col7-end;
+  grid-row: row2-start/row3-start;
+}
+.comicpage2in .comicpagechild {
+  width: 90%;
+  height: 66%;
+  transform: rotate(6deg);
+}
+
+.comicpagecenter {
   grid-column: col3-start/col6-start;
   grid-row: row1-start/row3-end;
   z-index: 10;
 }
-.comicpage2in .comicpagechild {
+.comicpagecenter .comicpagechild {
   width: 100%;
   height: 100%;
   transform: rotate(-2deg);
-}
-.comicpage3in {
-  grid-column: col5-start / col7-end;
-  grid-row: row2-start/row3-start;
-}
-.comicpage3in .comicpagechild {
-  width: 90%;
-  height: 66%;
-  transform: rotate(6deg);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -664,7 +685,6 @@ video::-webkit-media-controls-play-button {
 .videotocomic {
   grid-column: col10-start / col16-start;
   grid-row: row5-start/row8-start;
-  overflow: hidden;
 }
 .videotocomicrope {
   transform: rotate(22deg);
@@ -718,4 +738,12 @@ video::-webkit-media-controls-play-button {
   transform: rotate(0deg);
   top: 50%;
   transform-origin: left;
+}
+.comicNext {
+  grid-column: col6-start / col7-start;
+  grid-row: row3-start/row4-end;
+}
+.comicPrev {
+  grid-column: col2-start / col3-start;
+  grid-row: row3-start/row4-end;
 }

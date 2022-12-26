@@ -9,6 +9,9 @@ module.exports = {
         brown: "#383838",
       },
     },
+    fontFamily: {
+      sans: ["Pixellari"],
+    },
   },
   plugins: [],
 };

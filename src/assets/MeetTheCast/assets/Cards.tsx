@@ -23,7 +23,7 @@ const Cards: React.FC<Props> = ({ character }) => {
           {character?.name}
         </h1>
       </div>
-      <div className="w-[124%] h-[105%]  min-h-[249px] min-w-[227px] absolute top-[6%] left-[0%] flex flex-col items-center justify-between  pointer-events-none p-1">
+      <div className="w-[124%] h-[105%]  min-h-[269px] min-w-[247px] absolute top-[6%] left-[0%] flex flex-col items-center justify-between  pointer-events-none p-1">
         <div className="w-[81%] h-[68%] overflow-hidden mt-1 bg-[gray]">
           <img
             src={character?.img}

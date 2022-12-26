@@ -9,7 +9,7 @@ const BehidTheScene = () => {
     getCharacterInfo,
     changeDisplayingCards,
     useClickedId,
-  } = useGetCharcterInfo(behindthescenes, 4);
+  } = useGetCharcterInfo(behindthescenes, 2);
 
   useEffect(() => {
     changeCard(behindthescenes[0]?.id);

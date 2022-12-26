@@ -3,15 +3,15 @@ import video from "@/public/videos/Trailer/trailer.mp4";
 import playbutton from "@/public/Images/videocontrols/play.png";
 import { useHookstate } from "@hookstate/core";
 import { useDisplayingComponent } from "@/globalStates/states";
-import VideoHolder from "@/public/Images/boardElements/VideoHolder.png";
 import VideoHolderBG from "@/public/Images/boardElements/VideoHolderBG.png";
+import close from "@/public/Images/homepage/close.png";
 
 interface Props {
   pauseVideo?: boolean;
+  expand: boolean;
 }
 
-const Trailer: React.FC<Props> = ({ pauseVideo }) => {
-  console.count("trailer");
+const Trailer: React.FC<Props> = ({ pauseVideo, expand }) => {
   const [videoState, setVideoState] = useState<string>("paused");
   const videoRef = useRef<any>();
   const dispayingCompState = useHookstate(useDisplayingComponent());
@@ -34,8 +34,25 @@ const Trailer: React.FC<Props> = ({ pauseVideo }) => {
     setVideoState(state);
   };
 
+  const closeVideo = () => {
+    videoRef.current.pause();
+    dispayingCompState.set("");
+  };
+
   return (
     <div className="w-full h-full -translate-y-1/2 absolute top-1/2  left-1/2 -translate-x-1/2 rounded-md z-50">
+      {!expand && (
+        <div
+          className="w-[2.5%] h-[5%] absolute top-[2%] right-[1%] z-50 cursor-pointer"
+          onClick={closeVideo}
+        >
+          <img
+            src={close}
+            alt="close"
+            className="w-full h-full object-contain"
+          />
+        </div>
+      )}
       {dispayingCompState?.value !== "video" && (
         <div className="absolute w-full h-full">
           <img
@@ -43,14 +60,16 @@ const Trailer: React.FC<Props> = ({ pauseVideo }) => {
             alt="border"
             className="w-full h-full object-fill absolute top-0"
           />
-          {/* <img
-          src={VideoHolder}
-          alt="border"
-          className="w-full h-full object-cover absolute top-0"
-        /> */}
         </div>
       )}
-      <div className="w-[95%] h-[91%] absolute top-[4%] left-1/2 -translate-x-1/2">
+      <div
+        style={{
+          width: expand ? "95%" : "100%",
+          height: expand ? "91%" : "100%",
+          top: expand ? "4%" : "",
+        }}
+        className=" h-full absolute left-1/2 -translate-x-1/2"
+      >
         <video
           ref={videoRef}
           onPlay={() => {

@@ -113,7 +113,7 @@ const CastInfo = () => {
       </div>
       <div className="descCardtoinfocard relative z-50">
         <div className="w-full h-[5px] descCardtoinfocardRope absolute flex items-center">
-          <div className="w-8 h-8 absolute left-[13.5%]">
+          <div className="w-8 h-8 absolute left-[17.5%]">
             <img
               src={yellowpin}
               alt="pin"
@@ -161,7 +161,7 @@ const CastInfo = () => {
           />
         </div>
         <div className="cardContainerTocardInfoRope w-full h-[5px] absolute flex items-center z-50">
-          <div className="w-8 h-8 absolute z-50  right-[25%]">
+          <div className="w-8 h-8 absolute z-50  right-[37%]">
             <img
               src={purplepin}
               alt="pin"

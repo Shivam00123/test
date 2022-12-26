@@ -34,7 +34,7 @@ const ComicCard: React.FC<ComicCardProps> = ({ comic, openComic }) => {
       onClick={() => openComic(true, comic?.id)}
       className="comicCard w-[33%] h-[95%] relative cursor-pointer flex-shrink-0"
     >
-      <div className="w-[84%] h-[65%] opacity-50 absolute z-50 left-1/2 -translate-x-1/2 top-[23%]">
+      <div className="w-[84%] h-[65%] absolute z-50 left-1/2 -translate-x-1/2 top-[23%]">
         <img
           src={comic?.coverImage}
           alt="coverimage"
@@ -101,8 +101,8 @@ const ComicCollection: React.FC<Props> = ({ setOpenComic }) => {
         </div>
       </div>
       <div className="comicPages flex items-center justify-center">
-        {data.map((comic) => (
-          <ComicCard comic={comic} openComic={openComic} />
+        {data.map((comic, index) => (
+          <ComicCard key={index} comic={comic} openComic={openComic} />
         ))}
       </div>
       <div className="titleToComicOneCard relative">
