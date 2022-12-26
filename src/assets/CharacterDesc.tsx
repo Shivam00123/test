@@ -11,11 +11,9 @@ const CharacterDesc: React.FC<characterInfo> = ({
 }) => {
   return (
     <div className="w-full h-full flex flex-col items-start justify-center text-left pb-5 px-5 space-y-2">
-      <h1 className="text-xl font-bold">{charactername}</h1>
+      <h1 className="text-2xl font-bold">{charactername}</h1>
       <pre>
-        <p className="text-base whitespace-pre-line font-bold">
-          {characterdesc}
-        </p>
+        <p className="text-lg whitespace-pre-line font-bold">{characterdesc}</p>
       </pre>
     </div>
   );

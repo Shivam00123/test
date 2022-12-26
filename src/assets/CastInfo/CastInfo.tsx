@@ -67,15 +67,15 @@ const CastInfo = () => {
         </div>
       </div>
       <div className="descCard grid place-items-center">
-        <div className="w-[591px] h-[445px] relative">
-          <div className="w-full h-full absolute top-0 ">
+        <div className="w-[87%] h-[117%] relative">
+          <div className="w-full h-full absolute top-[5%] ">
             <img
               src={descBackMeet}
               alt="border"
               className="w-full h-full object-fill"
             />
           </div>
-          <div className="w-[90%] h-[64%] absolute bottom-[7%] left-1/2 -translate-x-1/2">
+          <div className="w-[90%] h-[60%] absolute bottom-[7%] left-1/2 -translate-x-1/2">
             <CharacterDesc
               charactername={useClickedId?.value?.name}
               characterdesc={useClickedId?.value?.desc}
@@ -84,7 +84,7 @@ const CastInfo = () => {
         </div>
       </div>
       <div className="infocard grid place-items-center">
-        <div className="w-[110%] h-[86%] -rotate-6 relative z-20">
+        <div className="w-[100%] h-[95%] -rotate-6 relative z-20">
           <div className="w-full h-full absolute top-0 z-50">
             <img
               src={castcard}
@@ -113,7 +113,7 @@ const CastInfo = () => {
       </div>
       <div className="descCardtoinfocard relative z-50">
         <div className="w-full h-[5px] descCardtoinfocardRope absolute flex items-center">
-          <div className="w-8 h-8 absolute left-[17.5%]">
+          <div className="w-8 h-8 absolute left-[14.5%]">
             <img
               src={yellowpin}
               alt="pin"
@@ -122,7 +122,7 @@ const CastInfo = () => {
           </div>
         </div>
       </div>
-      <div className="cardContainer flex items-center justify-between -translate-x-[10%] -translate-y-[7%] z-50 relative">
+      <div className="cardContainer flex items-center justify-between -translate-x-[10%] translate-y-[7%] z-50 relative">
         {displayingCards.map((card, index) => (
           <>
             <div

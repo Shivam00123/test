@@ -1,4 +1,4 @@
-import React, { useState, useRef, useMemo } from "react";
+import React, { useState, useRef, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import titleImg from "@/public/Images/for website/Meet the cast page 2/title.png";
@@ -14,7 +14,6 @@ import ColoredPins from "../ColoredPins/ColoredPins";
 
 interface ComicPageProps {
   card?: objectType;
-  func: (action: string | number) => void;
 }
 
 interface ButtonProps {
@@ -55,9 +54,9 @@ const Buttons: React.FC<ButtonProps> = ({ classname, action, func }) => {
   );
 };
 
-const ComicPage: React.FC<ComicPageProps> = ({ card, func }) => {
+const ComicPage: React.FC<ComicPageProps> = ({ card }) => {
   return (
-    <div onClick={() => func(card?.id)} className="w-full h-full relative mt-5">
+    <div className="w-full h-full relative mt-5">
       <div className="w-full h-full absolute top-0">
         <img
           src={comicpageback}
@@ -81,19 +80,21 @@ interface Props {
   data: objectType;
 }
 
-let maxShow: number = 2;
+let maxShow: number = 3;
 
 const ComicPages: React.FC<Props> = ({ setOpenComic, data }) => {
-  const { displayingCards, changeDisplayingCards, resetState, searchCastById } =
+  const { displayingCards, changeStartingPoint, resetState, searchCastById } =
     useGetCharcterInfo(data?.pages, maxShow);
-  const IndexRef = useRef(useGenerateIndex(2));
+  const IndexRef = useRef(useGenerateIndex(3));
   const [clickedData, setClickedData] = useState<objectType>({});
   const [divisor, setDivisor] = useState<number>(maxShow);
+  const [startPoint, setStartPoint] = useState<number>(data?.pages?.length - 1);
+  const [leaveFirst, setLeaveFirst] = useState<boolean>(true);
+  const [leftoutpages, setLeftoutPages] = useState<number>(1);
 
-  const backToCollection = (set: boolean) => {
-    resetState();
-    setOpenComic(set);
-  };
+  useMemo(() => {
+    changeStartingPoint(startPoint);
+  }, [startPoint]);
 
   const getClickedComic = (id: number | string) => {
     if (!id) return;
@@ -107,35 +108,53 @@ const ComicPages: React.FC<Props> = ({ setOpenComic, data }) => {
     getClickedComic(displayingCards?.[0]?.id.toString());
   }, [displayingCards]);
 
-  const changeCards = (action: string) => {
-    if (!action) return;
+  const changeLeftOutPagesTitle = (action: string) => {
     if (action === "next") {
-      if (
-        clickedData?.id === displayingCards?.[displayingCards?.length - 1].id
-      ) {
-        changeDisplayingCards(action);
+      if (leftoutpages > data?.pages.length - 1) {
+        setLeftoutPages(1);
       } else {
-        getClickedComic(
-          displayingCards?.[displayingCards?.length - 1].id.toString()
-        );
-      }
-      if (divisor >= data?.pages?.length) {
-        setDivisor(maxShow);
-      } else {
-        setDivisor(divisor + maxShow);
+        setLeftoutPages(leftoutpages + 1);
       }
     } else {
-      if (clickedData?.id === displayingCards?.[0].id) {
-        changeDisplayingCards(action);
-      } else {
-        getClickedComic(displayingCards?.[0].id.toString());
-      }
       if (divisor <= maxShow) {
         setDivisor(data?.pages?.length);
       } else {
         setDivisor(divisor - maxShow);
       }
     }
+  };
+
+  const changeCards = (action: string) => {
+    if (!action) return;
+    if (action === "next") {
+      if (startPoint > data?.pages?.length) {
+        setStartPoint(data?.pages?.length - 1);
+      } else {
+        if (!leaveFirst) {
+          setStartPoint(startPoint + 1);
+        } else {
+          setStartPoint(0);
+          setLeaveFirst(false);
+        }
+      }
+    } else {
+      if (startPoint <= 0) {
+        setStartPoint(data?.pages?.length - 1);
+      } else {
+        if (!leaveFirst) {
+          setStartPoint(startPoint - 1);
+        } else {
+          setStartPoint(data?.pages?.length - 2);
+          setLeaveFirst(false);
+        }
+      }
+    }
+    changeLeftOutPagesTitle(action);
+  };
+
+  const backToCollection = (set: boolean) => {
+    resetState();
+    setOpenComic(set);
   };
 
   return (
@@ -157,19 +176,19 @@ const ComicPages: React.FC<Props> = ({ setOpenComic, data }) => {
       </div>
       {displayingCards?.map((card: any, index: any) => (
         <div
-          key={index}
+          key={card?.id}
           className={`comicpage${IndexRef.current.generateCardIndex()}in flex items-center justify-end`}
         >
           <div className="comicpagechild relative">
-            <ComicPage func={getClickedComic} card={card} />
+            <ComicPage card={card} />
           </div>
         </div>
       ))}
-      <div className={`comicpagecenter flex items-center justify-end`}>
+      {/* <div className={`comicpagecenter flex items-center justify-end`}>
         <div className="comicpagechild relative">
           <ComicPage func={() => {}} card={clickedData} />
         </div>
-      </div>
+      </div> */}
       <div className="leftcomicpages relative">
         <div className="w-[150%] h-full absolute -right-[50%] top-[30%] -rotate-3">
           <img
@@ -177,12 +196,11 @@ const ComicPages: React.FC<Props> = ({ setOpenComic, data }) => {
             alt="background-image"
             className="w-full h-full object-fill"
           />
-          <h1>
-            <h1 className="absolute top-1/2 -translate-y-1/2 left-5 font-bold text-3xl">
-              {Math.round(divisor / maxShow)} of{" "}
-              {Math.round(data?.pages?.length / maxShow)}
-            </h1>
+
+          <h1 className="absolute top-1/2 -translate-y-1/2 left-5 font-bold text-3xl">
+            {leftoutpages} of {data?.pages?.length}
           </h1>
+
           <ColoredPins pin="red" classname="top-0 left-1/2" />
         </div>
       </div>

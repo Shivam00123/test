@@ -517,24 +517,23 @@ video::-webkit-media-controls-play-button {
 }
 
 .comicpage2in {
-  grid-column: col5-start / col7-end;
-  grid-row: row2-start/row3-start;
-}
-.comicpage2in .comicpagechild {
-  width: 90%;
-  height: 66%;
-  transform: rotate(6deg);
-}
-
-.comicpagecenter {
   grid-column: col3-start/col6-start;
   grid-row: row1-start/row3-end;
   z-index: 10;
 }
-.comicpagecenter .comicpagechild {
+.comicpage2in .comicpagechild {
   width: 100%;
   height: 100%;
   transform: rotate(-2deg);
+}
+.comicpage3in {
+  grid-column: col5-start / col7-end;
+  grid-row: row2-start/row3-start;
+}
+.comicpage3in .comicpagechild {
+  width: 90%;
+  height: 66%;
+  transform: rotate(6deg);
 }
 
 /* -------------------------------------------------------------------------- */

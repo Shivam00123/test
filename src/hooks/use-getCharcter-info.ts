@@ -90,6 +90,10 @@ const useGetCharcterInfo = (
     useClickedId.set({});
   };
 
+  const changeStartingPoint = (pointer: number) => {
+    setStartPoint(pointer);
+  };
+
   return {
     searchCastById,
     useCastInfoArray,
@@ -99,6 +103,7 @@ const useGetCharcterInfo = (
     changeDisplayingCards,
     displayingCards,
     getClickedItem,
+    changeStartingPoint,
     resetState,
   };
 };
